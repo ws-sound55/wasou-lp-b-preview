@@ -387,3 +387,334 @@
   .hero.hero-bright .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:21px}
   .hero.hero-bright .hero-actions .button{width:100%;min-height:54px}
 }
+
+
+/* === Public-FV design rebuild / 2026-10-01 === */
+.official-fv{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#f8fbfd;
+  color:#102b4a;
+}
+.official-fv-main{
+  position:relative;
+  min-height:680px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 72% 20%,rgba(204,235,250,.72),transparent 29%),
+    linear-gradient(115deg,#fff 0%,#fff 42%,#eef8fc 100%);
+}
+.official-fv-photo{
+  position:absolute;
+  z-index:0;
+  top:0;
+  right:-2%;
+  width:69%;
+  height:100%;
+  background-image:url("https://raw.githubusercontent.com/ws-sound55/wasou-lp-b-preview/main/assets/images/fv_pc.png");
+  background-repeat:no-repeat;
+  background-position:67% 42%;
+  background-size:165% auto;
+  filter:saturate(.78) brightness(1.08);
+  opacity:.92;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 12%,#000 35%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 12%,#000 35%,#000 100%);
+}
+.official-fv-right-mask{
+  position:absolute;
+  z-index:1;
+  top:0;
+  right:0;
+  width:22%;
+  height:36%;
+  background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.42) 68%,transparent);
+  pointer-events:none;
+}
+.official-fv-inner{
+  position:relative;
+  z-index:4;
+  width:min(1180px,calc(100% - 64px));
+  margin:0 auto;
+  padding:42px 0 190px;
+}
+.official-fv-copy{width:min(620px,52vw)}
+.official-fv-label{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  width:fit-content;
+  margin:0 0 18px;
+  color:#9a7413;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.05em;
+}
+.official-fv-label::before,.official-fv-label::after{
+  width:88px;
+  height:1px;
+  background:#d4af37;
+  content:"";
+}
+.official-fv-label span{
+  padding:8px 34px 9px;
+  border:1px solid #d4af37;
+  clip-path:polygon(5% 0,95% 0,100% 50%,95% 100%,5% 100%,0 50%);
+  background:rgba(255,255,255,.72);
+}
+.official-fv-kicker{
+  margin:0 0 8px;
+  color:#8e2f3f;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.official-fv h1{
+  margin:0;
+  color:#082a55;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:clamp(58px,5.4vw,78px);
+  font-weight:700;
+  line-height:1.18;
+  letter-spacing:-.035em;
+  text-shadow:0 1px 0 rgba(255,255,255,.85);
+}
+.official-fv-sp-break{display:none}
+.official-fv-underline{
+  display:block;
+  width:470px;
+  max-width:80%;
+  height:15px;
+  margin:4px 0 14px;
+  border-top:4px solid #d4af37;
+  border-radius:50%;
+  transform:rotate(-1deg);
+  opacity:.92;
+}
+.official-fv-pains{
+  display:grid;
+  grid-template-columns:repeat(2,max-content);
+  gap:5px 26px;
+  margin-top:5px;
+  color:#173f6a;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.65;
+}
+.official-fv-question{
+  max-width:560px;
+  margin:13px 0 0;
+  color:#294a6b;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.75;
+}
+.official-fv-brand{
+  margin:16px 0 0;
+  color:#082a55;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.official-fv-wave{
+  position:absolute;
+  z-index:2;
+  left:-6%;
+  width:112%;
+  height:170px;
+  background:rgba(255,255,255,.86);
+  border-radius:50% 50% 0 0 / 34% 34% 0 0;
+  pointer-events:none;
+}
+.official-fv-wave-a{bottom:72px;transform:rotate(1.7deg)}
+.official-fv-wave-b{bottom:30px;transform:rotate(-2deg);opacity:.78}
+.official-fv-trust{
+  position:absolute;
+  z-index:5;
+  left:max(32px,calc((100% - 1180px)/2));
+  bottom:34px;
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  min-width:580px;
+  padding:14px 25px;
+  border:1px solid rgba(8,42,85,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 8px 25px rgba(35,74,103,.10);
+  color:#12365f;
+  backdrop-filter:blur(3px);
+}
+.official-fv-trust-icon{color:#173f6a;font-size:13px;letter-spacing:-4px;margin-right:8px}
+.official-fv-trust-label{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:18px;font-weight:700}
+.official-fv-trust strong{
+  color:#d4af37;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:44px;
+  line-height:1;
+}
+.official-fv-trust span{font-weight:700}
+.official-fv-trust-sep{margin-left:8px}
+
+.official-fv-cta-band{
+  position:relative;
+  z-index:7;
+  background:linear-gradient(100deg,#07294c,#0b3b66);
+  color:#fff;
+}
+.official-fv-cta-inner{
+  display:grid;
+  grid-template-columns:minmax(300px,.85fr) minmax(520px,1.15fr);
+  align-items:center;
+  gap:34px;
+  width:min(1180px,calc(100% - 64px));
+  min-height:126px;
+  margin:0 auto;
+  padding:22px 0;
+}
+.official-fv-diagnosis{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:13px;
+  align-items:end;
+}
+.official-fv-diagnosis-kicker{
+  grid-column:1/-1;
+  margin-bottom:2px;
+  color:#d4af37;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+.official-fv-diagnosis strong{
+  color:#fff;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:27px;
+  line-height:1.3;
+}
+.official-fv-diagnosis small{
+  grid-column:1/-1;
+  margin-top:6px;
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+}
+.official-fv-cta-actions{
+  display:grid;
+  grid-template-columns:minmax(320px,1fr) auto;
+  align-items:center;
+  gap:18px;
+}
+.official-fv-main-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:64px;
+  padding:14px 30px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#28d7d1,#02bdb9);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 8px 20px rgba(0,0,0,.16);
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  text-decoration:none;
+}
+.official-fv-main-cta span{margin-left:12px;font-size:23px}
+.official-fv-main-cta:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.official-fv-sub-cta{
+  color:rgba(255,255,255,.86);
+  font-size:14px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+@media(max-width:980px){
+  .official-fv-main{min-height:640px}
+  .official-fv-copy{width:min(570px,58vw)}
+  .official-fv h1{font-size:clamp(52px,6.2vw,66px)}
+  .official-fv-label::before,.official-fv-label::after{width:48px}
+  .official-fv-label{font-size:18px}
+  .official-fv-label span{padding:7px 25px}
+  .official-fv-photo{width:68%;background-position:67% 44%;background-size:180% auto}
+  .official-fv-cta-inner{grid-template-columns:1fr;gap:16px}
+  .official-fv-cta-actions{grid-template-columns:1fr auto}
+}
+@media(max-width:760px){
+  .official-fv-main{
+    min-height:0;
+    background:linear-gradient(180deg,#fff 0%,#f3f9fc 58%,#fff 100%);
+  }
+  .official-fv-photo{
+    z-index:1;
+    top:252px;
+    right:0;
+    width:100%;
+    height:250px;
+    background-position:70% 49%;
+    background-size:215% auto;
+    opacity:.95;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 82%,transparent 100%);
+    mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 82%,transparent 100%);
+  }
+  .official-fv-right-mask{display:none}
+  .official-fv-inner{width:calc(100% - 40px);padding:28px 0 350px}
+  .official-fv-copy{width:100%}
+  .official-fv-label{width:100%;justify-content:center;margin-bottom:13px;font-size:14px}
+  .official-fv-label::before,.official-fv-label::after{width:25px}
+  .official-fv-label span{padding:6px 16px}
+  .official-fv-kicker{margin-bottom:7px;text-align:center;font-size:14px}
+  .official-fv h1{text-align:center;font-size:clamp(37px,10.2vw,44px);line-height:1.23;letter-spacing:-.03em}
+  .official-fv-sp-break{display:none}
+  .official-fv-underline{width:260px;max-width:75%;margin:5px auto 0;border-top-width:3px}
+  .official-fv-pains{
+    grid-template-columns:repeat(2,1fr);
+    gap:3px 12px;
+    margin-top:265px;
+    text-align:center;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .official-fv-question{margin:10px auto 0;text-align:center;font-size:14px;line-height:1.7}
+  .official-fv-brand{margin-top:12px;text-align:center;font-size:16px}
+  .official-fv-wave{height:90px;left:-12%;width:124%}
+  .official-fv-wave-a{bottom:118px}
+  .official-fv-wave-b{bottom:86px}
+  .official-fv-trust{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    z-index:5;
+    justify-content:center;
+    min-width:0;
+    width:calc(100% - 40px);
+    margin:-106px auto 18px;
+    padding:10px 13px;
+    gap:4px;
+    border-radius:14px;
+    text-align:center;
+  }
+  .official-fv-trust-icon{display:none}
+  .official-fv-trust-label{font-size:13px}
+  .official-fv-trust strong{font-size:28px}
+  .official-fv-trust span{font-size:12px}
+  .official-fv-trust-sep{margin-left:3px}
+  .official-fv-cta-inner{display:block;width:calc(100% - 32px);padding:18px 0 22px}
+  .official-fv-diagnosis{text-align:center;display:block}
+  .official-fv-diagnosis-kicker{display:block}
+  .official-fv-diagnosis strong{display:block;font-size:22px}
+  .official-fv-diagnosis small{display:block;margin-top:5px;font-size:12px}
+  .official-fv-cta-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+  .official-fv-main-cta{min-height:56px;padding:12px 18px;font-size:15px}
+  .official-fv-sub-cta{text-align:center;font-size:13px}
+}
+@media(max-width:380px){
+  .official-fv-inner{width:calc(100% - 32px)}
+  .official-fv h1{font-size:36px}
+  .official-fv-label{font-size:13px}
+  .official-fv-pains{font-size:15px}
+  .official-fv-trust{width:calc(100% - 30px)}
+}

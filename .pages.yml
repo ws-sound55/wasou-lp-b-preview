@@ -1,0 +1,143 @@
+media:
+  - name: column_images
+    label: コラム画像
+    input: assets/column/images
+    output: /assets/column/images
+    categories: [image]
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: columns
+    label: コラム記事
+    type: collection
+    path: content/columns
+    format: yaml-frontmatter
+    filename:
+      template: "{slug}.md"
+      field: create
+    view:
+      primary: title
+      sort: published_at
+      order: desc
+      search: "title,excerpt,intro"
+    fields:
+      - name: published
+        label: 公開する
+        type: boolean
+        default: false
+        description: オフのまま保存すると下書きとして保持され、公開ページには表示されません。
+      - name: title
+        label: 記事タイトル
+        type: string
+        required: true
+      - name: slug
+        label: スラッグ
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: 英小文字・数字・ハイフンのみで入力してください。
+        description: 例：employee-retention-recruiting
+      - name: categories
+        label: カテゴリ
+        type: select
+        required: true
+        options:
+          multiple: true
+          min: 1
+          values:
+            - name: family-governance
+              label: 創業家・同族経営
+            - name: philosophy-organization
+              label: 理念・組織づくり
+            - name: hr-evaluation
+              label: 評価・人事制度
+            - name: retention-development
+              label: 定着・育成
+            - name: recruitment
+              label: 採用・求人
+      - name: published_at
+        label: 公開日
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: updated_at
+        label: 更新日
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: intro
+        label: 導入文
+        type: text
+        required: true
+      - name: excerpt
+        label: 一覧用抜粋
+        type: text
+        description: 未入力の場合は導入文を一覧に表示します。
+      - name: eyecatch
+        label: アイキャッチ画像
+        type: image
+        options:
+          media: column_images
+      - name: pickup
+        label: PICK UPに表示する
+        type: boolean
+        default: false
+      - name: wasou_view
+        label: WASOU VIEWとして表示する
+        type: boolean
+        default: false
+      - name: show_article_cta
+        label: 記事途中CTAを表示する
+        type: boolean
+        default: false
+      - name: related_articles
+        label: 関連記事
+        type: reference
+        options:
+          collection: columns
+          multiple: true
+          max: 3
+          value: "{slug}"
+          label: "{title}"
+      - name: related_service
+        label: 関連サービス
+        type: select
+        options:
+          values:
+            - name: ""
+              label: 表示しない
+            - name: family-governance
+              label: 創業家・ファミリーガバナンス
+            - name: philosophy-values
+              label: 経営理念・価値観・行動指針
+            - name: hr-system
+              label: 人事制度
+            - name: retention-development
+              label: 定着・育成
+            - name: recruitment-strategy
+              label: 採用戦略・求人
+      - name: seo_title
+        label: SEO title
+        type: string
+      - name: seo_description
+        label: meta description
+        type: text
+      - name: ogp_image
+        label: OGP画像
+        type: image
+        options:
+          media: column_images
+      - name: body
+        label: 本文
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: column_images
+          path: article
+          rename: safe
+          switcher: true

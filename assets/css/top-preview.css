@@ -244,3 +244,146 @@
 
 /* Keep the representative section in a true one-column reading layout on tablet and mobile. */
 @media(max-width:900px){.representative-layout{grid-template-columns:1fr}}
+
+
+/* === Official-site bright hero refresh / 2026-10-01 === */
+.hero.hero-bright{
+  position:relative;
+  overflow:hidden;
+  padding:78px 0 92px;
+  background:
+    radial-gradient(circle at 78% 18%,rgba(213,237,249,.76),transparent 32%),
+    radial-gradient(circle at 88% 64%,rgba(255,238,197,.48),transparent 25%),
+    linear-gradient(116deg,#ffffff 0%,#ffffff 49%,#f2f8fb 100%);
+  color:var(--deep);
+}
+.hero.hero-bright::before{
+  display:block;
+  position:absolute;
+  inset:auto -8% -38% 42%;
+  width:760px;
+  height:360px;
+  border:1px solid rgba(20,44,73,.08);
+  border-radius:50%;
+  content:"";
+}
+.hero.hero-bright::after{
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  width:38%;
+  height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--burgundy));
+  content:"";
+}
+.hero.hero-bright .hero-inner{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.03fr) minmax(470px,.97fr);
+  align-items:center;
+  gap:68px;
+  width:var(--content);
+  margin:0 auto;
+}
+.hero.hero-bright .hero-copy{max-width:710px;margin:0;padding:0}
+.hero.hero-bright .hero-eyebrow{
+  margin:0 0 18px;
+  color:#9a7413;
+  font-size:15px;
+  line-height:1.8;
+  letter-spacing:.06em;
+}
+.hero.hero-bright .hero-problemline{
+  margin:0 0 11px;
+  color:var(--burgundy);
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.hero.hero-bright h1{
+  max-width:710px;
+  margin:0;
+  color:var(--deep);
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:clamp(58px,4.9vw,72px);
+  font-weight:700;
+  line-height:1.27;
+  letter-spacing:-.02em;
+}
+.hero.hero-bright .hero-summary{
+  display:block;
+  max-width:670px;
+  margin:28px 0 0;
+  color:#3b5067;
+  font-size:17px;
+  line-height:1.95;
+}
+.hero.hero-bright .hero-claim{
+  margin:21px 0 0;
+  padding-left:16px;
+  border-left:4px solid var(--burgundy);
+  color:var(--deep);
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.7;
+}
+.hero.hero-bright .hero-brand-message{
+  margin:18px 0 0;
+  padding:0;
+  border:0;
+  color:#9a7413;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  font-size:18px;
+  font-weight:700;
+}
+.hero.hero-bright .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero.hero-bright .hero-actions .button-secondary{
+  border-color:#90a2b6;
+  background:rgba(255,255,255,.78);
+  color:var(--deep);
+}
+.hero.hero-bright .hero-actions .button-secondary:hover{border-color:var(--deep);background:var(--deep);color:#fff}
+.hero-scene{margin:0}
+.hero-scene svg{
+  display:block;
+  width:100%;
+  height:auto;
+  filter:drop-shadow(0 20px 34px rgba(44,79,103,.14));
+}
+.hero-scene-mobile{display:none}
+.hero-scene-desktop{display:block}
+
+@media(max-width:1000px){
+  .hero.hero-bright{padding:64px 0 72px}
+  .hero.hero-bright .hero-inner{grid-template-columns:minmax(0,1fr) minmax(360px,.8fr);gap:38px}
+  .hero.hero-bright h1{font-size:clamp(48px,5.8vw,60px)}
+}
+
+@media(max-width:760px){
+  .hero.hero-bright{
+    padding:42px 0 54px;
+    background:
+      radial-gradient(circle at 82% 23%,rgba(213,237,249,.78),transparent 35%),
+      linear-gradient(180deg,#ffffff 0%,#f5fafc 100%);
+  }
+  .hero.hero-bright::before{display:none}
+  .hero.hero-bright::after{width:62%;height:3px}
+  .hero.hero-bright .hero-inner{display:block;width:min(100% - 40px,1120px)}
+  .hero.hero-bright .hero-copy{max-width:none}
+  .hero.hero-bright .hero-eyebrow{margin-bottom:13px;font-size:12px;line-height:1.65}
+  .hero.hero-bright .hero-problemline{margin-bottom:8px;font-size:15px;line-height:1.7}
+  .hero.hero-bright h1{font-size:clamp(34px,10.2vw,42px);line-height:1.34}
+  .hero-scene-desktop{display:none}
+  .hero-scene-mobile{display:block;margin:22px 0 0}
+  .hero-scene-mobile svg{filter:drop-shadow(0 12px 20px rgba(44,79,103,.12))}
+  .hero.hero-bright .hero-summary{margin-top:20px;font-size:15px;line-height:1.85}
+  .hero.hero-bright .hero-summary br{display:none}
+  .hero.hero-bright .hero-claim{margin-top:15px;padding-left:12px;border-left-width:3px;font-size:18px}
+  .hero.hero-bright .hero-brand-message{margin-top:14px;font-size:16px}
+  .hero.hero-bright .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:21px}
+  .hero.hero-bright .hero-actions .button{width:100%;min-height:54px}
+}

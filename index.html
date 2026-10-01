@@ -64,64 +64,101 @@
 </nav>
 
 <main id="main">
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero hero-bright" aria-labelledby="hero-title">
     <div class="hero-inner">
       <div class="hero-copy">
         <p class="hero-eyebrow">中小企業の人と組織の悩みに。<br>特に、同族企業の2代目・3代目経営者へ。</p>
-        <h1 id="hero-title">採用の悩みは、<br>求人だけの問題では<br class="h1-narrow-break">ありません。</h1>
-        <figure class="hero-vision hero-vision-mobile" aria-label="人を中心に、会社と経営をひとつの方向へつなぐブランドビジュアル">
-          <svg viewBox="0 0 520 370" role="img" aria-hidden="true">
-            <path class="vision-light vision-light-burgundy" d="M56 308 L220 78"/>
-            <path class="vision-light vision-light-gold" d="M122 332 L345 48"/>
-            <path class="vision-horizon" d="M48 300 H475"/>
-            <g class="vision-building">
-              <rect x="315" y="80" width="121" height="201" rx="0"/>
-              <path d="M339 111V247M370 111V247M401 111V247M326 137H425M326 170H425M326 203H425"/>
+        <p class="hero-problemline">採用の悩みは、求人だけの問題ではありません。</p>
+        <h1 id="hero-title">採用は、<br>求人原稿から始めない。</h1>
+
+        <figure class="hero-scene hero-scene-mobile" aria-label="明るいオフィスで、人と会社が未来へ進むイメージ">
+          <svg viewBox="0 0 760 470" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="skyM" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7fcff"/>
+                <stop offset="0.62" stop-color="#e6f4fb"/>
+                <stop offset="1" stop-color="#fff7ea"/>
+              </linearGradient>
+              <radialGradient id="sunM" cx="73%" cy="31%" r="38%">
+                <stop offset="0" stop-color="#fff8cf" stop-opacity=".95"/>
+                <stop offset=".45" stop-color="#fff5d7" stop-opacity=".5"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="760" height="470" rx="28" fill="url(#skyM)"/>
+            <rect width="760" height="470" rx="28" fill="url(#sunM)"/>
+            <g opacity=".42" fill="#9fc5d9">
+              <rect x="60" y="205" width="72" height="170" rx="3"/>
+              <rect x="145" y="155" width="88" height="220" rx="3"/>
+              <rect x="246" y="230" width="58" height="145" rx="3"/>
+              <rect x="535" y="142" width="74" height="233" rx="3"/>
+              <rect x="622" y="198" width="66" height="177" rx="3"/>
             </g>
-            <g class="vision-person">
-              <circle cx="192" cy="149" r="27"/>
-              <path d="M133 282c8-61 31-92 59-92s52 31 60 92"/>
-              <path d="M159 222h66"/>
+            <g stroke="#ffffff" stroke-opacity=".72" stroke-width="5">
+              <path d="M0 112H760"/>
+              <path d="M380 0V390"/>
             </g>
-            <circle class="vision-pulse" cx="192" cy="149" r="47"/>
-            <path class="vision-connection" d="M243 189 C274 166 289 151 315 140"/>
-            <text class="vision-word" x="192" y="334" text-anchor="middle">人</text>
-            <text class="vision-word" x="376" y="313" text-anchor="middle">会社</text>
-            <text class="vision-word vision-word-small" x="435" y="57" text-anchor="end">経営</text>
+            <g fill="#244664" opacity=".88">
+              <ellipse cx="367" cy="343" rx="245" ry="32" opacity=".18"/>
+              <rect x="250" y="317" width="255" height="12" rx="6"/>
+              <circle cx="294" cy="262" r="25"/><path d="M258 322c6-47 19-70 36-70s31 23 37 70z"/>
+              <circle cx="360" cy="248" r="28"/><path d="M319 322c8-52 22-78 41-78s34 26 42 78z"/>
+              <circle cx="434" cy="258" r="24"/><path d="M400 322c6-46 18-69 34-69s29 23 35 69z"/>
+              <circle cx="509" cy="244" r="27"/><path d="M470 322c7-51 20-76 39-76s33 25 40 76z"/>
+            </g>
+            <path d="M99 394C248 361 414 374 665 323" fill="none" stroke="#d4af37" stroke-width="5" stroke-linecap="round" opacity=".88"/>
+            <path d="M99 411C270 380 453 394 699 344" fill="none" stroke="#8e2f3f" stroke-width="3" stroke-linecap="round" opacity=".55"/>
           </svg>
-          <figcaption>人・会社・経営を、ひとつの方向へ。</figcaption>
         </figure>
-        <p class="hero-mobile-summary">応募が来ない。採っても辞める。人が育たない。その原因は、求人原稿ではなく、会社の中にあるかもしれません。</p>
-        <p class="hero-claim">和奏は、採用できない理由を、<br class="mobile-only-break">求人の中だけで探しません。</p>
-        <div class="hero-summary"><p>応募が来ない。採っても辞める。人が育たない。その原因は、求人原稿ではなく、会社の中にあるかもしれません。</p></div>
+
+        <p class="hero-summary">応募が来ない。採っても辞める。人が育たない。<br class="desktop-only-break">その原因は、求人原稿ではなく、会社の中にあるかもしれません。</p>
+        <p class="hero-claim">和奏は、採用できない理由を、求人の中だけで探しません。</p>
         <p class="hero-brand-message">人が集まり、育ち、定着する会社へ。</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#diagnostic">自社の採用課題を診断する［無料］</a>
-          <a class="button button-secondary" href="/contact/">人・組織の悩みを相談する</a>
+          <a class="button button-secondary" href="https://wasou-jinji.jp/contact/">人・組織の悩みを相談する</a>
         </div>
       </div>
-      <figure class="hero-vision hero-vision-desktop" aria-label="人を中心に、会社と経営をひとつの方向へつなぐブランドビジュアル">
-          <svg viewBox="0 0 520 370" role="img" aria-hidden="true">
-            <path class="vision-light vision-light-burgundy" d="M56 308 L220 78"/>
-            <path class="vision-light vision-light-gold" d="M122 332 L345 48"/>
-            <path class="vision-horizon" d="M48 300 H475"/>
-            <g class="vision-building">
-              <rect x="315" y="80" width="121" height="201" rx="0"/>
-              <path d="M339 111V247M370 111V247M401 111V247M326 137H425M326 170H425M326 203H425"/>
-            </g>
-            <g class="vision-person">
-              <circle cx="192" cy="149" r="27"/>
-              <path d="M133 282c8-61 31-92 59-92s52 31 60 92"/>
-              <path d="M159 222h66"/>
-            </g>
-            <circle class="vision-pulse" cx="192" cy="149" r="47"/>
-            <path class="vision-connection" d="M243 189 C274 166 289 151 315 140"/>
-            <text class="vision-word" x="192" y="334" text-anchor="middle">人</text>
-            <text class="vision-word" x="376" y="313" text-anchor="middle">会社</text>
-            <text class="vision-word vision-word-small" x="435" y="57" text-anchor="end">経営</text>
-          </svg>
-          <figcaption>人・会社・経営を、ひとつの方向へ。</figcaption>
-        </figure>
+
+      <figure class="hero-scene hero-scene-desktop" aria-label="明るいオフィスで、人と会社が未来へ進むイメージ">
+        <svg viewBox="0 0 760 610" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="skyD" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8fdff"/>
+              <stop offset=".58" stop-color="#e4f3fb"/>
+              <stop offset="1" stop-color="#fff5e7"/>
+            </linearGradient>
+            <radialGradient id="sunD" cx="72%" cy="31%" r="42%">
+              <stop offset="0" stop-color="#fff5be" stop-opacity=".98"/>
+              <stop offset=".42" stop-color="#fff4d5" stop-opacity=".56"/>
+              <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="760" height="610" rx="34" fill="url(#skyD)"/>
+          <rect width="760" height="610" rx="34" fill="url(#sunD)"/>
+          <g opacity=".5" fill="#9fc7da">
+            <rect x="54" y="253" width="72" height="218" rx="3"/>
+            <rect x="139" y="184" width="90" height="287" rx="3"/>
+            <rect x="244" y="292" width="58" height="179" rx="3"/>
+            <rect x="525" y="169" width="82" height="302" rx="3"/>
+            <rect x="622" y="248" width="66" height="223" rx="3"/>
+          </g>
+          <g stroke="#ffffff" stroke-opacity=".76" stroke-width="6">
+            <path d="M0 136H760"/>
+            <path d="M380 0V515"/>
+          </g>
+          <g fill="#244664" opacity=".9">
+            <ellipse cx="380" cy="488" rx="270" ry="38" opacity=".17"/>
+            <rect x="226" y="428" width="309" height="14" rx="7"/>
+            <circle cx="273" cy="357" r="28"/><path d="M231 433c7-55 22-82 42-82s35 27 43 82z"/>
+            <circle cx="352" cy="340" r="32"/><path d="M305 433c9-62 25-92 47-92s39 30 48 92z"/>
+            <circle cx="441" cy="353" r="28"/><path d="M400 433c7-55 21-82 41-82s35 27 43 82z"/>
+            <circle cx="527" cy="335" r="31"/><path d="M481 433c8-61 24-91 46-91s38 30 47 91z"/>
+          </g>
+          <path d="M76 534C240 493 429 503 692 438" fill="none" stroke="#d4af37" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+          <path d="M76 557C269 513 475 526 719 464" fill="none" stroke="#8e2f3f" stroke-width="4" stroke-linecap="round" opacity=".52"/>
+        </svg>
+      </figure>
     </div>
   </section>
 

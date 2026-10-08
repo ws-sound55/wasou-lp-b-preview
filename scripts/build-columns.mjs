@@ -26,10 +26,18 @@ const services = {
 const md = new MarkdownIt({html:false,linkify:true,typographer:true});
 const esc = (value = '') => String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[char]));
 const attr = (value = '') => esc(value).replace(/`/g, '&#096;');
-const formatDate = value => {
+const toIsoDate = value => {
   if (!value) return '';
-  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})/);
-  return match ? `${match[1]}年${Number(match[2])}月${Number(match[3])}日` : String(value);
+  if (value instanceof Date && !Number.isNaN(value.valueOf())) return value.toISOString().slice(0, 10);
+  const direct = String(value).match(/^(\d{4}-\d{2}-\d{2})/);
+  if (direct) return direct[1];
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.valueOf()) ? '' : parsed.toISOString().slice(0, 10);
+};
+const formatDate = value => {
+  const iso = toIsoDate(value);
+  const match = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  return match ? `${match[1]}年${Number(match[2])}月${Number(match[3])}日` : '';
 };
 const normalizeArray = value => Array.isArray(value) ? value.filter(Boolean) : (value ? [value] : []);
 const readPosts = async () => {
@@ -48,8 +56,8 @@ const readPosts = async () => {
       slug,
       title: String(data.title),
       categories,
-      published_at: String(data.published_at).slice(0, 10),
-      updated_at: data.updated_at ? String(data.updated_at).slice(0, 10) : '',
+      published_at: toIsoDate(data.published_at),
+      updated_at: toIsoDate(data.updated_at),
       intro: String(data.intro || ''),
       excerpt: String(data.excerpt || data.intro || ''),
       eyecatch: String(data.eyecatch || ''),

@@ -51,6 +51,12 @@
   <url>
     <loc>https://wasou-jinji.jp/service/</loc>
   </url>
+  <url>
+    <loc>https://wasou-jinji.jp/seminar6/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- COLUMN_URLS:START -->
   <url>
     <loc>https://wasou-jinji.jp/column/</loc>
@@ -64,7 +70,7 @@
   </url>
   <url>
     <loc>https://wasou-jinji.jp/column/why-no-applicants/</loc>
-    <lastmod>Tue Sep 29</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -48,7 +48,12 @@ jobs:
       - name: Generate column pages
         run: npm run build:columns
       - name: Verify indexing and discovery signals
-        run: npm run check:columns
+        run: |
+          if [ "${GITHUB_REPOSITORY}" = "ws-sound55/wasou-lp-b-preview" ]; then
+            INDEXING_CHECK_PREVIEW=true npm run check:columns
+          else
+            npm run check:columns
+          fi
       - name: Commit generated pages
         run: |
           if git diff --quiet -- column sitemap.xml sitemap/index.html; then

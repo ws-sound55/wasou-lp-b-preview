@@ -10,6 +10,7 @@ const sitemapPath = path.join(root, 'sitemap.xml');
 const htmlSitemapPath = path.join(root, 'sitemap', 'index.html');
 const consultationPath = path.join(root, 'consultation.html');
 const legalPath = path.join(root, 'tokutei.html');
+const previewMode = process.env.INDEXING_CHECK_PREVIEW === 'true';
 const categoryMap = new Set([
   'family-governance',
   'philosophy-organization',
@@ -97,7 +98,7 @@ for (const post of posts) {
 
   has(article, `<link rel="canonical" href="${canonical}">`, `${post.slug} canonical`);
   has(article, '"@type":"BlogPosting"', `${post.slug} BlogPosting schema`);
-  if (article.includes('name="robots" content="noindex')) fail(`${post.slug} must be indexable`);
+  if (!previewMode && article.includes('name="robots" content="noindex')) fail(`${post.slug} must be indexable`);
   has(article, 'href="/sitemap/"', `${post.slug} footer sitemap link`);
   has(columnIndex, `href="${route}"`, `${post.slug} column index link`);
   for (const categoryPage of categoryPages) has(categoryPage, `href="${route}"`, `${post.slug} category link`);
@@ -117,7 +118,7 @@ for (const category of categoryMap) {
   });
   has(categoryPage, `<link rel="canonical" href="${canonical}">`, `${category} category canonical`);
   has(categoryPage, '"@type":"CollectionPage"', `${category} CollectionPage schema`);
-  if (categoryPage.includes('name="robots" content="noindex')) fail(`${category} category must be indexable`);
+  if (!previewMode && categoryPage.includes('name="robots" content="noindex')) fail(`${category} category must be indexable`);
   has(xmlSitemap, `<loc>${canonical}</loc>`, `${category} XML sitemap URL`);
   has(xmlSitemap, '<lastmod>', `${category} XML sitemap update date`);
 }

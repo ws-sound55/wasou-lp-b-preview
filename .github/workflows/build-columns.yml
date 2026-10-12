@@ -6,12 +6,22 @@ on:
     paths:
       - 'content/columns/**'
       - 'scripts/build-columns.mjs'
+      - 'scripts/verify-column-indexing.mjs'
       - 'column/styles.css'
       - 'column/filter.js'
+      - 'consultation.html'
+      - 'tokutei.html'
+      - 'service/index.html'
+      - 'sitemap.xml'
+      - 'sitemap/index.html'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/build-columns.yml'
   workflow_dispatch:
+
+concurrency:
+  group: column-build-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -23,6 +33,11 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Synchronize latest main branch
+        run: git pull --rebase origin main
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,14 +47,16 @@ jobs:
         run: npm ci
       - name: Generate column pages
         run: npm run build:columns
+      - name: Verify indexing and discovery signals
+        run: npm run check:columns
       - name: Commit generated pages
         run: |
-          if git diff --quiet -- column sitemap.xml; then
+          if git diff --quiet -- column sitemap.xml sitemap/index.html; then
             echo "No generated changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add column sitemap.xml
+          git add column sitemap.xml sitemap/index.html
           git commit -m "Build column pages"
           git push

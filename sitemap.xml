@@ -66,15 +66,21 @@
   <!-- COLUMN_URLS:START -->
   <url>
     <loc>https://wasou-jinji.jp/column/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://wasou-jinji.jp/column/category/recruitment/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wasou-jinji.jp/column/recruiting-before-job-posting/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://wasou-jinji.jp/column/why-no-applicants/</loc>

@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build:columns": "node scripts/build-columns.mjs"
+    "build:columns": "node scripts/build-columns.mjs",
+    "check:columns": "node scripts/verify-column-indexing.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

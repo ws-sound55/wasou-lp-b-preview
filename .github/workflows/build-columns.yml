@@ -46,7 +46,12 @@ jobs:
       - name: Install build dependencies
         run: npm ci
       - name: Generate column pages
-        run: npm run build:columns
+        run: |
+          if [ "${GITHUB_REPOSITORY}" = "ws-sound55/wasou-lp-b-preview" ]; then
+            COLUMNS_PREVIEW_NOINDEX=true npm run build:columns
+          else
+            npm run build:columns
+          fi
       - name: Verify indexing and discovery signals
         run: |
           if [ "${GITHUB_REPOSITORY}" = "ws-sound55/wasou-lp-b-preview" ]; then

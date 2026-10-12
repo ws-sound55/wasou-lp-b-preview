@@ -66,7 +66,11 @@ const [columnIndex, xmlSitemap, htmlSitemap, robots, consultationPage, legalPage
   read(legalPath)
 ]);
 
-has(robots, `Sitemap: ${siteUrl}/sitemap.xml`, 'robots.txt sitemap declaration');
+if (previewMode) {
+  has(robots, 'Disallow: /', 'preview robots exclusion');
+} else {
+  has(robots, `Sitemap: ${siteUrl}/sitemap.xml`, 'robots.txt sitemap declaration');
+}
 has(htmlSitemap, '<!-- COLUMN_ARTICLE_LINKS:START -->', 'HTML sitemap start marker');
 has(htmlSitemap, '<!-- COLUMN_ARTICLE_LINKS:END -->', 'HTML sitemap end marker');
 
@@ -77,7 +81,11 @@ for (const page of [
   const canonical = `${siteUrl}${page.route}`;
   has(page.content, `<link rel="canonical" href="${canonical}">`, `${page.label} canonical`);
   has(page.content, '<meta name="description"', `${page.label} description`);
-  has(page.content, '<meta name="robots" content="index,follow">', `${page.label} indexability`);
+  if (previewMode) {
+    has(page.content, '<meta name="robots" content="noindex, nofollow">', `${page.label} preview exclusion`);
+  } else {
+    has(page.content, '<meta name="robots" content="index,follow">', `${page.label} indexability`);
+  }
   has(page.content, '"@type":"WebPage"', `${page.label} WebPage schema`);
   has(xmlSitemap, `<loc>${canonical}</loc>`, `${page.label} XML sitemap URL`);
   has(htmlSitemap, `href="${page.route}"`, `${page.label} HTML sitemap link`);
@@ -98,7 +106,11 @@ for (const post of posts) {
 
   has(article, `<link rel="canonical" href="${canonical}">`, `${post.slug} canonical`);
   has(article, '"@type":"BlogPosting"', `${post.slug} BlogPosting schema`);
-  if (!previewMode && article.includes('name="robots" content="noindex')) fail(`${post.slug} must be indexable`);
+  if (previewMode) {
+    has(article, '<meta name="robots" content="noindex, nofollow">', `${post.slug} preview exclusion`);
+  } else if (article.includes('name="robots" content="noindex')) {
+    fail(`${post.slug} must be indexable`);
+  }
   has(article, 'href="/sitemap/"', `${post.slug} footer sitemap link`);
   has(columnIndex, `href="${route}"`, `${post.slug} column index link`);
   for (const categoryPage of categoryPages) has(categoryPage, `href="${route}"`, `${post.slug} category link`);
@@ -118,7 +130,11 @@ for (const category of categoryMap) {
   });
   has(categoryPage, `<link rel="canonical" href="${canonical}">`, `${category} category canonical`);
   has(categoryPage, '"@type":"CollectionPage"', `${category} CollectionPage schema`);
-  if (!previewMode && categoryPage.includes('name="robots" content="noindex')) fail(`${category} category must be indexable`);
+  if (previewMode) {
+    has(categoryPage, '<meta name="robots" content="noindex, nofollow">', `${category} category preview exclusion`);
+  } else if (categoryPage.includes('name="robots" content="noindex')) {
+    fail(`${category} category must be indexable`);
+  }
   has(xmlSitemap, `<loc>${canonical}</loc>`, `${category} XML sitemap URL`);
   has(xmlSitemap, '<lastmod>', `${category} XML sitemap update date`);
 }

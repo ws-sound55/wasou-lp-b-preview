@@ -25,7 +25,7 @@ const [home, homeCss, company, companyCss, seminar11, xmlSitemap, htmlSitemap, r
 ]);
 const isSearchExcludedPreview = /\bDisallow:\s*\//.test(robots);
 
-// Root: Google's site-name source and the most important brand entry page.
+// Root: site-name source and the most important brand entry page.
 requireText(home, '<link rel="canonical" href="https://wasou-jinji.jp/">', 'root canonical');
 requireText(home, '<meta property="og:site_name" content="和奏人事パートナーズ">', 'root OG site name');
 requireText(home, '"@type": "WebSite"', 'root WebSite structured data');
@@ -34,12 +34,7 @@ for (const alias of ['和奏人事', 'わそう人事', 'わそうじんじ', 'w
   requireText(home, `"${alias}"`, `root alternateName ${alias}`);
 }
 requireText(home, '"@type": "Organization"', 'root Organization structured data');
-if (isSearchExcludedPreview) {
-  requireText(home, '<h1 id="hero-title">', 'preview root semantic page title');
-} else {
-  requireText(home, '<h1 class="seo-page-title">', 'root semantic page title');
-  requireText(homeCss, '.seo-page-title{', 'root semantic title accessibility style');
-}
+requireText(home, '<h1 id="top-title">', 'root semantic page title');
 
 // Human-readable brand reading and the latest seminar are both internally discoverable.
 requireText(company, '読み：わそうじんじパートナーズ', 'company brand reading');

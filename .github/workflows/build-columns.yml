@@ -7,6 +7,7 @@ on:
       - 'content/columns/**'
       - 'scripts/build-columns.mjs'
       - 'scripts/verify-column-indexing.mjs'
+      - 'scripts/verify-site-seo.mjs'
       - 'column/styles.css'
       - 'column/filter.js'
       - 'consultation.html'
@@ -59,6 +60,8 @@ jobs:
           else
             npm run check:columns
           fi
+      - name: Verify sitewide SEO signals
+        run: npm run check:seo
       - name: Commit generated pages
         run: |
           if git diff --quiet -- column sitemap.xml sitemap/index.html; then

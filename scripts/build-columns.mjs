@@ -8,6 +8,7 @@ const sourceDir = process.env.COLUMNS_SOURCE || path.join(root, 'content', 'colu
 const outputDir = process.env.COLUMNS_OUTPUT || path.join(root, 'column');
 const sitemapPath = process.env.COLUMNS_SITEMAP === 'false' ? null : path.join(root, 'sitemap.xml');
 const htmlSitemapPath = path.join(root, 'sitemap', 'index.html');
+const topPagePath = path.join(root, 'index.html');
 const siteUrl = 'https://wasou-jinji.jp';
 const previewNoindex = process.env.COLUMNS_PREVIEW_NOINDEX === 'true';
 const consultationUrl = 'https://reserve.peraichi.com/r/b194f80c/select_date?course=82468';
@@ -89,9 +90,9 @@ const readPosts = async () => {
 };
 const nav = current => `
 <button class="site-menu-trigger" type="button" aria-label="メニューを開く" aria-controls="siteMobileNav" aria-expanded="false"><span></span><span></span><span></span></button>
-<nav class="site-mobile-nav" id="siteMobileNav" aria-label="サイトメニュー" hidden><div class="site-mobile-nav-head"><span class="site-mobile-nav-title">MENU</span><button class="site-mobile-nav-close" type="button" aria-label="メニューを閉じる">×</button></div><div class="site-mobile-nav-links"><a href="/">TOPページ</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">セミナー</a><a href="/column/"${current === 'column' ? ' aria-current="page"' : ''}>コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a></div></nav>
-<header class="column-site-header"><div class="column-header-inner"><a class="column-brand" href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="/assets/images/logo.png" alt="和奏人事パートナーズ"></a><nav class="column-desktop-nav" aria-label="主要メニュー"><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">セミナー</a><a href="/column/"${current === 'column' ? ' aria-current="page"' : ''}>コラム</a><a href="/company/">会社概要</a><a class="header-contact" href="/contact/">お問い合わせ</a></nav></div></header>`;
-const footer = () => `<footer class="column-footer"><div class="column-footer-inner"><div><a href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="/assets/images/logo.png" alt="和奏人事パートナーズ"></a><p>株式会社和装コンサルタンツ<br>〒108-0074 東京都港区高輪2-14-17 グレイス高輪ビル8階<br>TEL 03-6869-6780</p></div><nav aria-label="フッターメニュー"><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/seminar11/">セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a><a href="/privacy.html">プライバシーポリシー</a></nav></div><nav class="site-footer-menu" aria-label="サイトメニュー"><p class="site-footer-menu-title">サイトメニュー</p><div class="site-footer-menu-links"><a href="/">トップページ</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">採用・定着改善セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a><a href="/sitemap/">サイトマップ</a></div></nav></footer>`;
+<nav class="site-mobile-nav" id="siteMobileNav" aria-label="サイトメニュー" hidden><div class="site-mobile-nav-head"><span class="site-mobile-nav-title">MENU</span><button class="site-mobile-nav-close" type="button" aria-label="メニューを閉じる">×</button></div><div class="site-mobile-nav-links"><a href="/">TOPページ</a><a href="/family/">ファミリー企業を支援する理由</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">セミナー</a><a href="/column/"${current === 'column' ? ' aria-current="page"' : ''}>コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a></div></nav>
+<header class="column-site-header"><div class="column-header-inner"><a class="column-brand" href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="/assets/images/logo.png" alt="和奏人事パートナーズ"></a><nav class="column-desktop-nav" aria-label="主要メニュー"><a href="/family/">支援する理由</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">セミナー</a><a href="/column/"${current === 'column' ? ' aria-current="page"' : ''}>コラム</a><a href="/company/">会社概要</a><a class="header-contact" href="/contact/">お問い合わせ</a></nav></div></header>`;
+const footer = () => `<footer class="column-footer"><div class="column-footer-inner"><div><a href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="/assets/images/logo.png" alt="和奏人事パートナーズ"></a><p>株式会社和装コンサルタンツ<br>〒108-0074 東京都港区高輪2-14-17 グレイス高輪ビル8階<br>TEL 03-6869-6780</p></div><nav aria-label="フッターメニュー"><a href="/family/">ファミリー企業を支援する理由</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/seminar11/">セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a><a href="/privacy.html">プライバシーポリシー</a></nav></div><nav class="site-footer-menu" aria-label="サイトメニュー"><p class="site-footer-menu-title">サイトメニュー</p><div class="site-footer-menu-links"><a href="/">トップページ</a><a href="/family/">ファミリー企業を支援する理由</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">採用・定着改善セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a><a href="/sitemap/">サイトマップ</a></div></nav></footer>`;
 const layout = ({title, description, canonical, body, structuredData = ''}) => `<!doctype html><html lang="ja"><head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KFHHHFDB');</script><!-- End Google Tag Manager --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${attr(description)}"><link rel="canonical" href="${attr(canonical)}">${previewNoindex ? '<meta name="robots" content="noindex, nofollow">' : ''}<meta property="og:type" content="website"><meta property="og:title" content="${attr(title)}"><meta property="og:description" content="${attr(description)}"><meta property="og:url" content="${attr(canonical)}"><meta property="og:image" content="${siteUrl}/ogp.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/page-top.css"><link rel="stylesheet" href="/assets/css/site-menu.css"><link rel="stylesheet" href="/assets/css/site-footer-nav.css"><link rel="stylesheet" href="/column/styles.css">${structuredData ? `<script type="application/ld+json">${structuredData}</script>` : ''}<script src="/assets/js/page-top.js" defer></script><script src="/assets/js/site-menu.js" defer></script></head><body class="site-menu-enabled"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFHHHFDB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>${body}<button class="site-page-top" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る"><span aria-hidden="true">↑</span></button></body></html>`;
 const tags = post => `<span class="column-tags">${post.categories.map(category => `<span class="column-tag">${esc(categoryMap[category])}</span>`).join('')}</span>`;
 const card = post => `<article class="column-card" data-column-card data-categories="${post.categories.join('|')}">${post.eyecatch ? `<a class="column-card-image" href="/column/${attr(post.slug)}/" aria-label="${attr(post.title)}を読む"><img src="${attr(post.eyecatch)}" alt=""></a>` : ''}<div class="column-card-meta"><time datetime="${attr(post.published_at)}">${formatDate(post.published_at)}</time>${tags(post)}${post.wasou_view ? '<span class="column-tag">WASOU VIEW</span>' : ''}</div><h2><a href="/column/${attr(post.slug)}/">${esc(post.title)}</a></h2><p>${esc(post.excerpt)}</p><a class="column-card-link" href="/column/${attr(post.slug)}/">続きを読む</a></article>`;
@@ -116,6 +117,22 @@ const updateHtmlSitemap = async posts => {
     throw new Error('HTML sitemap column link markers are missing.');
   }
   await fs.writeFile(htmlSitemapPath, html.replace(markerPattern, block), 'utf8');
+};
+const updateTopColumns = async posts => {
+  let html;
+  try {
+    html = await fs.readFile(topPagePath, 'utf8');
+  } catch {
+    throw new Error(`Top page not found: ${topPagePath}`);
+  }
+  const latest = posts.slice(0, 3);
+  const cards = latest.length ? latest.map(post => `<article class="top-column-card"><p class="top-column-date">${formatDate(post.published_at)}</p><h3><a href="/column/${attr(post.slug)}/">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><a href="/column/${attr(post.slug)}/">記事を読む</a></article>`).join('\n') : '<article class="top-column-card"><p class="top-column-date">準備中</p><h3>コラムを読み込んでいます。</h3><p>公開済みの最新コラムをここに表示します。</p></article>';
+  const block = `<!-- TOP_LATEST_COLUMNS:START -->\n    <div class="top-column-grid" aria-label="最新コラム">${cards}</div>\n    <!-- TOP_LATEST_COLUMNS:END -->`;
+  const markerPattern = /<!-- TOP_LATEST_COLUMNS:START -->[\s\S]*?<!-- TOP_LATEST_COLUMNS:END -->/;
+  if (!markerPattern.test(html)) {
+    throw new Error('Top-page latest column markers are missing.');
+  }
+  await fs.writeFile(topPagePath, html.replace(markerPattern, block), 'utf8');
 };
 const generatedMarker = path.join(outputDir, '.generated-pages.json');
 const previous = async () => { try { return JSON.parse(await fs.readFile(generatedMarker, 'utf8')); } catch { return {paths: []}; } };
@@ -176,6 +193,7 @@ const build = async () => {
     await fs.writeFile(sitemapPath, sitemap, 'utf8');
   }
   await updateHtmlSitemap(posts);
+  await updateTopColumns(posts);
   console.log(`Generated ${posts.length} published article(s), ${categories.length} category page(s).`);
 };
 await build();

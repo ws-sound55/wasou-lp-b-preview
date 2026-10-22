@@ -357,3 +357,26 @@ blockquote::before { position: absolute; top: 0; left: 0; color: var(--burgundy)
   .diagram-zoom img { transition: transform .2s ease, box-shadow .2s ease; }
   .diagram-zoom:hover img { box-shadow: 0 12px 26px rgba(23,54,77,.14); transform: translateY(-2px); }
 }
+
+/* seminar11 revision 2026-10-22: integrated manuscript + supplied diagrams */
+.hero-detail { max-width: 760px; margin-top: 31px; padding-top: 25px; border-top: 1px solid var(--line); color: var(--navy); }
+.hero-detail p { margin-bottom: .9em; font-size: 17px; line-height: 1.9; }
+.hero-aside-copy { margin: 0; color: var(--navy); font-family: var(--serif); font-size: 19px; font-weight: 700; line-height: 1.7; }
+.intro-diagram { padding: 88px 0; background: var(--paper); }
+.diagram-figure { margin: 0; }
+.diagram-figure picture, .diagram-figure img { display: block; width: 100%; height: auto; }
+.diagram-in-issue { margin: 30px 0 34px; }
+.concerns-grid { max-width: 780px; }
+.concerns .closing-copy { max-width: none; }
+.approach > .illustration-wide, .methods > .illustration-wide { margin-top: 44px; }
+.urgent-wrap .illustration-wide { margin-top: 38px; }
+.apply-button, .header-apply, .floating-apply { text-decoration: none; }
+@media (max-width: 850px) {
+  .hero-detail { margin-top: 27px; padding-top: 21px; }
+  .hero-detail p { font-size: 16px; line-height: 1.9; }
+  .hero-aside-copy { font-size: 17px; }
+  .intro-diagram { padding: 54px 0; }
+  .diagram-in-issue { margin: 24px 0 29px; }
+  .approach > .illustration-wide, .methods > .illustration-wide { margin-top: 31px; }
+  .urgent-wrap .illustration-wide { margin-top: 29px; }
+}

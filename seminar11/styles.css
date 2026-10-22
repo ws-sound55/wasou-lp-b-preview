@@ -396,12 +396,12 @@ blockquote::before { position: absolute; top: 0; left: 0; color: var(--burgundy)
 
 /* The numbered explanatory sequences carry the same visual weight as their headings. */
 .issue-item { grid-template-columns: 170px minmax(0, 1fr); gap: 38px; }
-.issue-no { font-size: 64px; }
+p.issue-no { font-size: 64px; }
 .steps-title { font-size: 38px; }
 .steps li { grid-template-columns: 104px minmax(0, 1fr); gap: 24px; }
 .steps li > span { font-size: 46px; }
 .steps-close { max-width: none; font-size: clamp(16px, 1.45vw, 20px); letter-spacing: -.045em; }
-.method-no { font-size: 44px; }
+p.method-no { font-size: 44px; }
 
 /* Cases: enlarge the context text as well as the headline numbers. */
 .case-card header p { font-size: 16px; }
@@ -439,7 +439,7 @@ blockquote { font-size: 18px; }
   #concerns-title { font-size: clamp(20px, 5.9vw, 23px); letter-spacing: -.075em; line-height: 1.55; }
   #structure-title { font-size: clamp(26px, 6.9vw, 30px); letter-spacing: -.075em; }
   .issue-item { grid-template-columns: 1fr; gap: 12px; }
-  .issue-no { font-size: 52px; }
+  p.issue-no { font-size: 52px; }
   .steps-title { font-size: 31px; }
   .steps li { grid-template-columns: 73px minmax(0, 1fr); gap: 15px; }
   .steps li > span { font-size: 42px; }
@@ -459,7 +459,7 @@ blockquote { font-size: 18px; }
   .results-foot .case-label { font-size: 19px !important; }
   .results-foot .disclaimer { font-size: 14px; }
 
-  .method-no { margin-bottom: 17px; font-size: 42px; }
+  p.method-no { margin-bottom: 17px; font-size: 42px; }
   .schedule h2 { font-size: clamp(41px, 10.8vw, 46px); }
   .schedule-table dt { padding: 17px 20px; font-size: 20px; }
   .schedule-table dd { padding: 20px; font-size: 21px; line-height: 1.75; }

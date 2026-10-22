@@ -468,3 +468,32 @@ blockquote { font-size: 18px; }
   #lecturer-title { letter-spacing: -.06em; }
   .final-cta h2 { font-size: clamp(29px, 7.7vw, 32px); line-height: 1.5; letter-spacing: -.075em; }
 }
+
+
+/* seminar11 mobile polish 2026-10-22: requested line control and CTA labels */
+@media (max-width: 850px) {
+  /* The seminar descriptor sits directly under the keyword; the desktop break remains untouched. */
+  .hero-title-break { display: none; }
+  .hero h1 em { display: block; margin-top: 0; line-height: 1.22; }
+  .hero-title-main { margin-bottom: 0; }
+
+  /* The two sentences remain continuous on a narrow screen without affecting desktop composition. */
+  .mobile-inline-break { display: none; }
+  .structure-continuation { display: inline; }
+  .structure-continuation + .structure-continuation { margin-left: 0; }
+
+  /* Every in-page and floating application CTA uses one readable phrase and no arrow. */
+  .apply-button, .floating-apply { gap: 0; white-space: nowrap; letter-spacing: -.055em; }
+  .apply-button { font-size: 15px; }
+  .floating-apply { right: 10px; left: 10px; min-height: 56px; padding: 13px 10px; font-size: 15px; }
+
+  /* Case cards requested at 90% of the preceding mobile type scale (10% reduction). */
+  .case-card header p { font-size: 17px; }
+  .case-card header h3 { font-size: 25px; }
+  .case-body { padding: 23px 18px 26px; }
+  .case-comparison section p, .case-retention p { font-size: 18px; }
+  .case-label, .results-foot .case-label { font-size: 16px !important; }
+  .case-result small { font-size: 16px; }
+  .case-result strong { font-size: 34px; }
+  blockquote { font-size: 16px; }
+}

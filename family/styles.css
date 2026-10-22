@@ -3,3 +3,37 @@
 /* Keep the family-page hero title as complete phrases on every screen width. */
 .family-hero h1 span{display:block;white-space:nowrap}
 @media(max-width:360px){.family-hero h1{font-size:33px;letter-spacing:0}}
+
+
+/* 2026-10-23: culture-flow clarity and shared CTA roles */
+.family-main-button{background:#0d8f9d;border-color:#0d8f9d}
+.family-main-button:hover,.family-main-button:focus-visible{background:#076f7c;border-color:#076f7c}
+.diagram-culture-inputs{position:relative}
+.diagram-culture-inputs div:after{bottom:-26px;height:26px}
+.diagram-culture-merge{position:relative;height:43px;margin:0}
+.diagram-culture-merge:before{content:"";position:absolute;top:0;left:16.6667%;width:66.6666%;height:1px;background:#93A9B9}
+.diagram-culture-merge:after{content:"";position:absolute;top:0;left:50%;width:1px;height:31px;background:#93A9B9}
+.diagram-flow-label{position:relative;margin:0 auto 39px}
+.diagram-flow-label:after{content:"↓";position:absolute;left:50%;top:calc(100% + 7px);transform:translateX(-50%);color:#607E90;font-size:18px;line-height:1}
+.diagram-culture-sequence{display:grid;justify-items:center;width:min(540px,100%);margin:0 auto}
+.culture-stage{display:grid;place-items:center;width:100%;min-height:72px;padding:15px 22px;text-align:center;font-weight:700;line-height:1.7}
+.culture-stage-culture{background:var(--navy);color:#fff;font:600 25px/1.5 var(--serif)}
+.culture-stage-value{border:1px solid #B8CCD8;background:#fff;color:var(--navy);font-size:16px}
+.culture-stage-support{background:var(--burgundy);color:#fff;font-size:17px}
+.culture-flow-arrow{display:grid;place-items:center;min-height:42px;color:#607E90;font-size:22px;line-height:1}
+.diagram-close{display:flex;justify-content:center;flex-wrap:wrap;column-gap:.42em;row-gap:0}
+.diagram-close span:last-child{white-space:nowrap}
+@media(max-width:620px){
+  .diagram-culture-inputs div:after{bottom:-11px;height:11px}
+  .diagram-culture-merge{height:27px}
+  .diagram-culture-merge:before{top:0;left:50%;width:1px;height:27px}
+  .diagram-culture-merge:after{display:none}
+  .diagram-flow-label{margin:0 auto 38px}
+  .culture-stage{min-height:66px;padding:13px 15px}
+  .culture-stage-culture{font-size:23px}
+  .culture-stage-value{font-size:15px}
+  .culture-stage-support{font-size:16px}
+  .culture-flow-arrow{min-height:34px;font-size:20px}
+  .diagram-close{display:block}
+  .diagram-close span{display:block}
+}

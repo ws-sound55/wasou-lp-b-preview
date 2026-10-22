@@ -380,3 +380,91 @@ blockquote::before { position: absolute; top: 0; left: 0; color: var(--burgundy)
   .approach > .illustration-wide, .methods > .illustration-wide { margin-top: 31px; }
   .urgent-wrap .illustration-wide { margin-top: 29px; }
 }
+
+
+/* seminar11 typography polish 2026-10-22: requested PC/SP hierarchy and wraps */
+/* Hero: remove the duplicated profile card and make the primary title one desktop line. */
+.hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.hero h1 { max-width: none; }
+.hero-title-main { white-space: nowrap; }
+.hero-title-main > span { display: inline; }
+.hero-kicker { white-space: nowrap; }
+.hero-kicker > span { display: inline; }
+
+/* Section English labels are navigation landmarks, not caption-sized details. */
+.section-number { margin-bottom: 20px; font-size: clamp(26px, 2.05vw, 31px); letter-spacing: .1em; line-height: 1.15; }
+
+/* The numbered explanatory sequences carry the same visual weight as their headings. */
+.issue-item { grid-template-columns: 170px minmax(0, 1fr); gap: 38px; }
+.issue-no { font-size: 64px; }
+.steps-title { font-size: 38px; }
+.steps li { grid-template-columns: 104px minmax(0, 1fr); gap: 24px; }
+.steps li > span { font-size: 46px; }
+.steps-close { max-width: none; font-size: clamp(16px, 1.45vw, 20px); letter-spacing: -.045em; }
+.method-no { font-size: 44px; }
+
+/* Cases: enlarge the context text as well as the headline numbers. */
+.case-card header p { font-size: 16px; }
+.case-card header h3 { font-size: 30px; }
+.case-comparison section p, .case-retention p { font-size: 20px; }
+.case-label { font-size: 14px !important; }
+.case-result small { font-size: 17px; }
+.case-result strong { font-size: 38px; }
+.case-retention .case-label { min-width: 62px; }
+blockquote { font-size: 18px; }
+.results-foot .disclaimer { font-size: 14px; }
+
+/* Seminar information is a decision section; it receives a larger, calmer hierarchy. */
+.schedule h2 { font-size: clamp(48px, 4.1vw, 60px); }
+.schedule-table dt { font-size: 20px; }
+.schedule-table dd { font-size: 21px; }
+.schedule-table .free, .schedule-table .capacity { font-size: 27px; }
+
+@media (min-width: 851px) {
+  .steps-close { white-space: nowrap; }
+}
+
+@media (max-width: 850px) {
+  /* Keep the requested mobile hero phrases on natural, intentional lines. */
+  .hero-kicker { white-space: normal; font-size: 16px; line-height: 1.7; letter-spacing: -.055em; }
+  .hero-kicker-leading { white-space: nowrap; }
+  .hero-kicker > span:last-child { white-space: nowrap; }
+  .hero-title-main { white-space: normal; }
+  .hero-title-main > span { display: block; }
+  .desktop-punctuation, .mobile-question-mark { display: none; }
+  .hero h1 { font-size: clamp(31px, 8.9vw, 35px); line-height: 1.35; letter-spacing: -.07em; }
+  .hero h1 em { font-size: .73em; letter-spacing: -.045em; }
+
+  .section-number { margin-bottom: 17px; font-size: clamp(24px, 6.2vw, 27px); letter-spacing: .075em; }
+  #concerns-title { font-size: clamp(20px, 5.9vw, 23px); letter-spacing: -.075em; line-height: 1.55; }
+  #structure-title { font-size: clamp(26px, 6.9vw, 30px); letter-spacing: -.075em; }
+  .issue-item { grid-template-columns: 1fr; gap: 12px; }
+  .issue-no { font-size: 52px; }
+  .steps-title { font-size: 31px; }
+  .steps li { grid-template-columns: 73px minmax(0, 1fr); gap: 15px; }
+  .steps li > span { font-size: 42px; }
+  .steps-close { font-size: 17px; letter-spacing: -.035em; }
+
+  .case-card header { padding: 24px 20px; }
+  .case-card header p { margin-bottom: 8px; font-size: 19px; }
+  .case-card header h3 { font-size: 28px; }
+  .case-body { padding: 26px 20px 29px; }
+  .case-comparison section p, .case-retention p { font-size: 20px; line-height: 1.75; }
+  .case-label { font-size: 18px !important; letter-spacing: .08em; }
+  .case-result small { font-size: 18px; }
+  .case-result strong { font-size: 38px; }
+  .case-retention { padding: 20px 0; }
+  .case-retention .case-label { min-width: 0; }
+  blockquote { font-size: 18px; line-height: 1.85; }
+  .results-foot .case-label { font-size: 19px !important; }
+  .results-foot .disclaimer { font-size: 14px; }
+
+  .method-no { margin-bottom: 17px; font-size: 42px; }
+  .schedule h2 { font-size: clamp(41px, 10.8vw, 46px); }
+  .schedule-table dt { padding: 17px 20px; font-size: 20px; }
+  .schedule-table dd { padding: 20px; font-size: 21px; line-height: 1.75; }
+  .schedule-table .free, .schedule-table .capacity { font-size: 27px; }
+
+  #lecturer-title { letter-spacing: -.06em; }
+  .final-cta h2 { font-size: clamp(29px, 7.7vw, 32px); line-height: 1.5; letter-spacing: -.075em; }
+}

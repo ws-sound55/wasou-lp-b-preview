@@ -37,3 +37,21 @@
   .diagram-close{display:block}
   .diagram-close span{display:block}
 }
+
+
+/* 2026-10-23: keep mobile controls out of the reading area. */
+.family-hero-h2-tail{white-space:nowrap}
+@media(max-width:900px){
+  .family-header .site-menu-trigger{position:absolute;top:50%;right:16px;transform:translateY(-50%);z-index:2}
+  .family-page .site-page-top{display:none!important}
+}
+@media(max-width:620px){
+  .family-hero h2{font-size:23px;line-height:1.72;letter-spacing:0}
+  .family-hero h2>span{display:block}
+  .family-hero h2>br{display:none}
+  .family-hero h2 .family-hero-h2-mobile-break{display:none}
+}
+@media(max-width:340px){
+  .family-hero h2{font-size:22px}
+  .family-hero h2 .family-hero-h2-mobile-break{display:block}
+}

@@ -431,7 +431,8 @@ blockquote { font-size: 18px; }
   .hero-kicker > span:last-child { white-space: nowrap; }
   .hero-title-main { white-space: normal; }
   .hero-title-main > span { display: block; }
-  .desktop-punctuation, .mobile-question-mark { display: none; }
+  .desktop-punctuation { display: inline; }
+  .mobile-question-mark { display: none; }
   .hero h1 { font-size: clamp(31px, 8.9vw, 35px); line-height: 1.35; letter-spacing: -.07em; }
   .hero h1 em { font-size: .73em; letter-spacing: -.045em; }
 

@@ -118,6 +118,13 @@ const updateHtmlSitemap = async posts => {
   }
   await fs.writeFile(htmlSitemapPath, html.replace(markerPattern, block), 'utf8');
 };
+const topColumnCard = post => {
+  const href = `/column/${attr(post.slug)}/`;
+  const image = post.eyecatch
+    ? `<a class="top-column-image" href="${href}" aria-label="${attr(post.title)}を読む"><img src="${attr(post.eyecatch)}" alt="" loading="lazy" decoding="async"></a>`
+    : '<div class="top-column-image-placeholder" aria-hidden="true"><span>COLUMN</span></div>';
+  return `<article class="top-column-card">${image}<div class="top-column-card-body"><p class="top-column-date">${formatDate(post.published_at)}</p><h3><a href="${href}">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><a class="top-column-read" href="${href}">記事を読む</a></div></article>`;
+};
 const updateTopColumns = async posts => {
   let html;
   try {
@@ -126,7 +133,7 @@ const updateTopColumns = async posts => {
     throw new Error(`Top page not found: ${topPagePath}`);
   }
   const latest = posts.slice(0, 3);
-  const cards = latest.length ? latest.map(post => `<article class="top-column-card"><p class="top-column-date">${formatDate(post.published_at)}</p><h3><a href="/column/${attr(post.slug)}/">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><a href="/column/${attr(post.slug)}/">記事を読む</a></article>`).join('\n') : '<article class="top-column-card"><p class="top-column-date">準備中</p><h3>コラムを読み込んでいます。</h3><p>公開済みの最新コラムをここに表示します。</p></article>';
+  const cards = latest.length ? latest.map(topColumnCard).join('\n') : '<article class="top-column-card"><div class="top-column-image-placeholder" aria-hidden="true"><span>COLUMN</span></div><div class="top-column-card-body"><p class="top-column-date">準備中</p><h3>コラムを読み込んでいます。</h3><p>公開済みの最新コラムをここに表示します。</p></div></article>';
   const block = `<!-- TOP_LATEST_COLUMNS:START -->\n    <div class="top-column-grid" aria-label="最新コラム">${cards}</div>\n    <!-- TOP_LATEST_COLUMNS:END -->`;
   const markerPattern = /<!-- TOP_LATEST_COLUMNS:START -->[\s\S]*?<!-- TOP_LATEST_COLUMNS:END -->/;
   if (!markerPattern.test(html)) {

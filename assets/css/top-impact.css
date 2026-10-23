@@ -40,3 +40,54 @@
 
 /* Keep fixed navigation from covering column eyecatch text while the section is in view. */
 .top-corporate.top-columns-in-view .site-page-top{opacity:0;pointer-events:none}
+
+
+/* 2026-10-23: reading-size refinement for the preview top only. */
+/* Japanese explanations are set at 16px; dates and notes use 14px. */
+.top-impact-label{font-size:14px}
+.top-impact-lead{font-size:16px;line-height:1.85}
+.top-destination p{font-size:16px;line-height:1.8}
+.top-destination-primary-grid .top-destination{min-height:338px}
+.top-destination-secondary-grid .top-destination{min-height:360px;padding-bottom:68px}
+.top-destination-secondary-grid .top-destination p{font-size:16px;line-height:1.8}
+.top-destination-company p{max-width:305px}
+.top-case-card dt{font-size:14px;line-height:1.7}
+.top-case-card dd{font-size:16px;line-height:1.85}
+.top-case-note{font-size:14px;line-height:1.8}
+.top-situation-grid p{font-size:16px;line-height:1.85}
+.top-family-copy p{font-size:16px;line-height:1.9}
+.top-service-grid article{min-height:320px}
+.top-service-grid span{font-size:14px;line-height:1.7}
+.top-service-grid p{font-size:16px;line-height:1.85}
+.top-representative-photo figcaption{font-size:14px;line-height:1.75}
+.top-representative-copy>p:not(.top-eyebrow){font-size:16px;line-height:1.9}
+.top-aim p:not(.top-eyebrow){font-size:16px;line-height:1.9}
+.top-column-card-body .top-column-date{font-size:14px;line-height:1.7}
+.top-column-card-body h3{font-size:20px;line-height:1.65}
+.top-column-card-body>p:not(.top-column-date){font-size:16px;line-height:1.8}
+.top-column-card-body .top-column-read{font-size:16px;line-height:1.7}
+.top-next-grid article>p:not(.top-next-tag):not(.top-next-title){font-size:16px;line-height:1.85}
+.corporate-footer p{font-size:14px;line-height:1.9}
+.corporate-footer nav a{font-size:14px;line-height:1.8}
+@media(max-width:820px){
+  .top-impact-label{font-size:14px}
+  .top-impact-lead{font-size:16px;line-height:1.85}
+  .top-destination-primary-grid .top-destination{min-height:276px}
+  .top-destination-secondary-grid .top-destination{min-height:294px;padding-bottom:66px}
+  .top-destination-company{min-height:304px!important}
+  .top-destination p,.top-destination-secondary-grid .top-destination p{font-size:16px!important;line-height:1.8}
+  .top-service-grid article{min-height:0}
+  .top-column-card-body{padding:22px 20px 24px}
+  .top-column-card-body h3{font-size:20px;line-height:1.65}
+  .top-column-card-body>p:not(.top-column-date){font-size:16px;line-height:1.8}
+}
+@media(max-width:350px){
+  .top-destination-company p{font-size:16px!important}
+}
+
+/* Reserve an explicit lower zone for the mobile arrow without reducing copy. */
+@media(max-width:820px){
+  .top-destination-primary-grid .top-destination{min-height:0;padding-bottom:80px}
+  .top-destination-secondary-grid .top-destination{min-height:0;padding-bottom:80px}
+  .top-destination-company{min-height:0!important}
+}

@@ -57,51 +57,55 @@
 }
 
 
-/* 2026-10-23: word-led family-page hero (no hero portrait). */
-.family-hero{padding:clamp(78px,8vw,116px) 0 clamp(72px,7vw,102px);background:linear-gradient(128deg,#FBFCFD 0%,#FFFFFF 47%,#EEF4F7 100%)}
+/* 2026-10-23: paper-like, word-led family-page hero (no portrait). */
+.family-hero{padding:clamp(78px,8vw,112px) 0 clamp(68px,7vw,94px);background:#FAF9F6}
 .family-hero:before,.family-hero:after{display:none}
-.family-hero-ribbons{position:absolute;z-index:0;top:-28px;right:-14vw;width:min(62vw,900px);height:530px;pointer-events:none}
-.family-hero-ribbons svg{display:block;width:100%;height:100%;overflow:visible}
-.family-ribbon{fill:none;stroke-linecap:round}
-.family-ribbon-navy{stroke:#10345A;stroke-width:68;opacity:.14}
-.family-ribbon-burgundy{stroke:#A5163B;stroke-width:58;opacity:.13}
-.family-ribbon-mist{stroke:#88AABB;stroke-width:76;opacity:.17}
-.family-ribbon-line{fill:none;stroke-width:3;stroke-linecap:round;opacity:.38}
-.family-ribbon-line-navy{stroke:#10345A}
-.family-ribbon-line-burgundy{stroke:#A5163B}
 .family-hero-content{position:relative;z-index:1}
 .family-hero-grid{display:block}
-.family-hero-copy{width:min(790px,100%)}
-.family-hero h1{margin:0;color:#526574;font:700 clamp(16px,1.45vw,20px)/1.7 var(--sans);letter-spacing:.035em}
+.family-hero-copy{width:min(850px,100%)}
+.family-hero h1{display:flex;align-items:center;gap:13px;width:max-content;max-width:100%;margin:0;color:#526574;font:700 clamp(16px,1.45vw,20px)/1.7 var(--sans);letter-spacing:.035em}
 .family-hero h1 span{display:inline;white-space:normal}
-.family-hero h2{max-width:820px;margin:23px 0 29px;color:var(--navy);font:600 clamp(41px,4.25vw,59px)/1.48 var(--serif);letter-spacing:.025em}
+.family-hero h1:after{content:"";display:block;flex:none;width:30px;height:1px;background:var(--burgundy)}
+.family-hero h2{max-width:840px;margin:23px 0 29px;color:var(--navy);font:600 clamp(41px,4.25vw,59px)/1.48 var(--serif);letter-spacing:.025em}
 .family-hero h2>span{white-space:nowrap}
-.family-hero-copy>p:not(.family-kicker):not(.family-signature){max-width:760px;margin:13px 0;color:#40596A;font-size:17px;line-height:2.08}
+.family-hero-copy>p:not(.family-kicker):not(.family-signature){max-width:840px;margin:13px 0;color:#263342;font-size:17px;line-height:2.08}
 .family-hero-copy .family-signature{margin-top:30px;color:var(--navy);font-size:15px;letter-spacing:.06em}
 .family-hero-photo{display:none}
+.family-hero-pages{position:absolute;z-index:0;top:34px;right:-70px;width:clamp(310px,25vw,390px);height:calc(100% - 68px);pointer-events:none}
+.family-hero-page{position:absolute;display:block;border:1px solid #D3D0C8;background:#F0EEE8}
+.family-hero-page-back{top:0;right:-62px;bottom:0;left:128px;background:#F0EEE8}
+.family-hero-page-middle{top:40px;right:-7px;bottom:31px;left:64px;background:#EDEBE5}
+.family-hero-page-front{top:85px;right:52px;bottom:72px;left:0;background:#E8E5DE}
 .family-contact-section h2>span{white-space:nowrap}
 @media(max-width:820px){
-  .family-hero-ribbons{right:-270px;top:-80px;width:620px;height:420px}
+  .family-hero-pages{top:28px;right:-155px;width:360px;height:calc(100% - 56px)}
+  .family-hero-page-back{left:144px}
+  .family-hero-page-middle{left:77px}
+  .family-hero-page-front{left:11px;right:54px}
 }
 @media(max-width:620px){
-  .family-hero{padding:53px 0 58px}
-  .family-hero-ribbons{top:-102px;right:-270px;width:530px;height:355px;opacity:.88}
+  .family-hero{padding:53px 0 56px}
   .family-hero-copy{width:100%}
-  .family-hero h1{font-size:14px;line-height:1.7;letter-spacing:.015em}
+  .family-hero h1{gap:9px;font-size:14px;line-height:1.7;letter-spacing:.01em}
+  .family-hero h1:after{width:20px}
   .family-hero h2{margin:18px 0 24px;font-size:30px;line-height:1.62;letter-spacing:0}
   .family-hero h2>span{display:block;white-space:nowrap}
   .family-hero h2>br{display:none}
   .family-hero h2 .family-hero-h2-tail{display:block;white-space:nowrap}
   .family-hero-copy>p:not(.family-kicker):not(.family-signature){margin:12px 0;font-size:16px;line-height:1.98}
   .family-hero-copy .family-signature{margin-top:25px;font-size:14px}
-  .family-contact-section h2{font-size:clamp(19px,5.85vw,23px);line-height:1.75;letter-spacing:0}
+  .family-hero-pages{top:24px;right:-232px;width:352px;height:178px}
+  .family-hero-page{border-color:#D3D0C8}
+  .family-hero-page-back{top:0;right:-22px;bottom:0;left:180px;background:#F0EEE8}
+  .family-hero-page-middle{top:20px;right:17px;bottom:16px;left:136px;background:#EDEBE5}
+  .family-hero-page-front{top:39px;right:55px;bottom:33px;left:96px;background:#E8E5DE}
+  .family-anchor-nav a{white-space:nowrap}
+  .family-contact-section h2{font-size:clamp(19px,5.85vw,23px);line-height:1.48;letter-spacing:0}
   .family-contact-section h2>span{display:block;white-space:nowrap}
+  .family-contact-section h2>br{display:none}
 }
 @media(max-width:340px){
   .family-hero h2{font-size:25px}
   .family-contact-section h2{font-size:19px}
-}
-@media(min-width:821px){
-  .family-hero-copy{width:min(850px,100%)}
-  .family-hero-copy>p:not(.family-kicker):not(.family-signature){max-width:840px}
+  .family-anchor-nav a{padding:6px 3px;font-size:11px;letter-spacing:-.025em}
 }

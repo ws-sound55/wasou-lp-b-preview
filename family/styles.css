@@ -109,3 +109,32 @@
   .family-contact-section h2{font-size:19px}
   .family-anchor-nav a{padding:6px 3px;font-size:11px;letter-spacing:-.025em}
 }
+
+
+/* 2026-10-23: approved fine-contour hero artwork (SVG, decorative only). */
+.family-hero{isolation:isolate;background:#FBFBF8}
+.family-hero-pages{display:none!important}
+.family-hero-contours{position:absolute;z-index:0;right:-112px;bottom:-62px;display:block;width:clamp(580px,48vw,760px);height:auto;pointer-events:none;overflow:visible}
+.family-hero-contours-blue path{fill:none;stroke:#9AAAB6;stroke-width:1.05;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:.57;vector-effect:non-scaling-stroke}
+.family-hero-contours-gold path{fill:none;stroke:#BEA052;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:.76;vector-effect:non-scaling-stroke}
+.family-hero-content{position:relative;z-index:1}
+@media(max-width:900px){
+  .family-hero-contours{width:560px;right:-365px;bottom:-54px}
+}
+@media(max-width:620px){
+  .family-hero{padding-bottom:96px}
+  .family-hero-contours{width:225px;right:-102px;bottom:-42px}
+  .family-hero-contours-blue path{stroke-width:.85;stroke-opacity:.5}
+  .family-hero-contours-gold path{stroke-width:.8;stroke-opacity:.67}
+  .family-hero h2{max-width:100%;font-size:clamp(22px,7vw,28px);line-height:1.64}
+  .family-hero h2>span{white-space:normal}
+  .family-hero h2 .family-hero-h2-tail{display:inline;white-space:nowrap}
+}
+@media(max-width:340px){
+  .family-hero h2{font-size:22px}
+}
+/* Keep the small page label intact at 320px without shrinking the body copy. */
+@media(max-width:340px){
+  .family-hero h1{gap:7px;font-size:12px;letter-spacing:-.02em}
+  .family-hero h1:after{width:16px}
+}

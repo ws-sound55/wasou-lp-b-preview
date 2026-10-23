@@ -154,7 +154,7 @@
 </main>
 <footer class="corporate-footer"><div class="corporate-footer-inner"><div><a href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="assets/images/logo.png" alt="和奏人事パートナーズ" width="1774" height="583"></a><p>人が集まり、育ち、定着する会社へ。</p><p>株式会社和装コンサルタンツ<br>〒108-0074 東京都港区高輪2-14-17 グレイス高輪ビル8階<br>TEL 03-6869-6780</p></div><nav aria-label="フッターメニュー"><a href="/family/">ファミリー企業を支援する理由</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar11/">セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">お問い合わせ</a><a href="/sitemap/">サイトマップ</a><a href="/privacy.html">プライバシーポリシー</a></nav></div></footer>
 
-<script>document.addEventListener('DOMContentLoaded',()=>{const section=document.querySelector('.top-columns');if(!section||!('IntersectionObserver' in window))return;new IntersectionObserver(entries=>document.body.classList.toggle('top-columns-in-view',entries[0].isIntersecting),{threshold:0}).observe(section);});</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{const section=document.querySelector('.top-columns');if(!section)return;const sync=()=>{const rect=section.getBoundingClientRect();document.body.classList.toggle('top-columns-in-view',rect.top<innerHeight&&rect.bottom>0);};addEventListener('scroll',sync,{passive:true});addEventListener('resize',sync);sync();});</script>
 <button class="site-page-top" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る"><span aria-hidden="true">↑</span></button>
 </body>
 </html>

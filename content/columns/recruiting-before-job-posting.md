@@ -1,6 +1,9 @@
 ---
 published: true
 title: ファミリー企業の採用は、求人原稿から始めない ― 先代から会社を引き継いだ経営者が、まず整えるべきこと
+title_keep_phrases:
+  - 経営者が、
+  - 整えるべきこと
 slug: recruiting-before-job-posting
 categories:
   - recruitment

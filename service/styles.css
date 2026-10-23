@@ -12,3 +12,8 @@
 @media(max-width:640px){.method-note{padding:14px 15px;font-size:14px!important}}
 /* Safeguard every responsive layout against accidental horizontal scrolling. */
 html,body{max-width:100%;overflow-x:clip}
+
+/* 2026-10-23: mobile CTAs wrap at natural phrase boundaries without shrinking text. */
+@media (max-width: 560px) {
+  .service-actions .button .jp-keep { display: inline-block; }
+}

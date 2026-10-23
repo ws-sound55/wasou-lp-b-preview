@@ -1,6 +1,8 @@
 ---
 published: true
 title: ファミリー企業の採用は「WHO」から考える ―「今の会社に合う人」ではなく、「これからの会社を一緒につくる人」を決める
+title_keep_phrases:
+  - これからの会社を一緒につくる人
 slug: job-posting-who-persona
 categories:
   - recruitment

@@ -1,0 +1,5 @@
+/* Shared Japanese line-wrap helpers. See docs/JAPANESE_LINE_WRAP_CHECKLIST.md. */
+.jp-keep,
+.jp-orphan-tail {
+  white-space: nowrap;
+}

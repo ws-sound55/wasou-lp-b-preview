@@ -1,1 +1,42 @@
-.site-menu-trigger,.site-mobile-nav{display:none}@media(max-width:900px){.site-menu-enabled .menu-button{display:none!important}.site-menu-enabled .header-link{display:none!important}.site-menu-trigger{position:fixed;z-index:2001;top:calc(12px + env(safe-area-inset-top));right:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;padding:0;border:1px solid #102A43;border-radius:0;background:#FFFFFF;color:#102A43;cursor:pointer}.site-menu-trigger span{display:block;width:23px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}.site-menu-trigger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.site-menu-trigger.is-open span:nth-child(2){opacity:0}.site-menu-trigger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.site-menu-trigger:focus-visible,.site-mobile-nav a:focus-visible,.site-mobile-nav-close:focus-visible{outline:3px solid #18A6A6;outline-offset:3px}.site-mobile-nav{display:block;position:fixed;z-index:2000;top:0;right:0;left:0;max-height:100dvh;overflow-y:auto;padding:calc(20px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));background:#FFFFFF;border-bottom:1px solid #DDE2E5;color:#102A43}.site-mobile-nav[hidden]{display:none}.site-mobile-nav-head{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px solid #DDE2E5}.site-mobile-nav-title{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:14px;font-weight:700;letter-spacing:.14em}.site-mobile-nav-close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:transparent;color:#102A43;font-size:28px;line-height:1;cursor:pointer}.site-mobile-nav-links{display:grid;grid-template-columns:1fr 1fr;margin-top:16px;border-top:1px solid #DDE2E5}.site-mobile-nav-links a{display:flex;align-items:center;min-height:58px;padding:12px 10px;border-bottom:1px solid #DDE2E5;color:#102A43;font-size:15px;font-weight:600;line-height:1.4;text-decoration:none}.site-mobile-nav-links a:nth-child(odd){border-right:1px solid #DDE2E5}.site-mobile-nav-links a:last-child{grid-column:1/-1;justify-content:center;margin-top:18px;border:0;background:#102A43;color:#FFFFFF;font-weight:700}.site-menu-enabled .site-page-top{z-index:25}}
+
+/* 2026-10-23: 共通ナビゲーション（PCは余白を保ち、1100px以下は一列メニュー） */
+.site-desktop-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.2vw,22px);margin-left:auto;min-width:0}
+.site-desktop-nav a{color:#102A43;font-size:14px;font-weight:600;line-height:1.5;text-decoration:none;white-space:nowrap}
+.site-desktop-nav a:last-child{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;background:#102A43;color:#fff}
+.site-desktop-nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:5px}
+.site-menu-trigger,.site-mobile-nav{display:none}
+.site-menu-open{overflow:hidden}
+@media(max-width:1100px){
+  .site-menu-enabled .menu-button,.site-menu-enabled .header-link,.site-menu-enabled .desktop-nav,.site-menu-enabled .family-desktop-nav,.site-menu-enabled .corporate-desktop-nav,.site-menu-enabled .column-desktop-nav,.site-menu-enabled .site-desktop-nav{display:none!important}
+  .site-menu-trigger{position:fixed;z-index:2001;top:calc(12px + env(safe-area-inset-top));right:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;padding:0;border:1px solid #102A43;border-radius:0;background:#FFFFFF;color:#102A43;cursor:pointer}
+  .site-menu-trigger span{display:block;width:23px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
+  .site-menu-trigger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .site-menu-trigger.is-open span:nth-child(2){opacity:0}
+  .site-menu-trigger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .site-menu-trigger:focus-visible,.site-mobile-nav a:focus-visible,.site-mobile-nav-close:focus-visible{outline:3px solid #18A6A6;outline-offset:3px}
+  .site-mobile-nav{display:block;position:fixed;z-index:2000;top:0;right:0;left:0;max-height:100dvh;overflow-y:auto;padding:calc(20px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));background:#FFFFFF;border-bottom:1px solid #DDE2E5;color:#102A43}
+  .site-mobile-nav[hidden]{display:none}
+  .site-mobile-nav-head{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px solid #DDE2E5}
+  .site-mobile-nav-title{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:14px;font-weight:700;letter-spacing:.14em}
+  .site-mobile-nav-close{display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;background:transparent;color:#102A43;font-size:28px;line-height:1;cursor:pointer}
+  .site-mobile-nav-links{display:grid;grid-template-columns:1fr;margin-top:16px;border-top:1px solid #DDE2E5}
+  .site-mobile-nav-links a{display:flex;align-items:center;min-height:56px;padding:12px 14px;border-bottom:1px solid #DDE2E5;color:#102A43;font-size:16px;font-weight:600;line-height:1.6;text-decoration:none}
+  .site-mobile-nav-links a[aria-current="page"]{background:#EEF4F6;text-decoration:underline;text-underline-offset:4px}
+  .site-mobile-nav-links a:last-child{justify-content:center;margin-top:16px;border:0;background:#102A43;color:#FFFFFF;font-weight:700}
+  .site-menu-enabled .site-page-top{z-index:25}
+}
+@media(min-width:1101px){.site-menu-trigger,.site-mobile-nav{display:none!important}.site-menu-open{overflow:auto}}
+
+
+/* 2026-10-23: 簡潔なページ用の共通PCヘッダー */
+.global-site-header{position:relative;z-index:30;background:#fff;border-bottom:1px solid #dce6ed;color:#102A43}
+.global-site-header-inner{width:min(1240px,calc(100% - 48px));min-height:82px;margin:0 auto;display:flex;align-items:center;gap:28px}
+.global-site-brand{display:block;flex:0 0 auto;line-height:0}.global-site-brand img{display:block;width:205px;max-width:42vw;height:auto}
+.site-header-with-nav .header-inner{width:min(1240px,calc(100% - 48px));gap:28px}
+.site-header-with-nav .header-inner .site-desktop-nav{margin-left:auto}
+@media(max-width:1100px){
+  .global-site-header-inner{width:calc(100% - 40px);min-height:70px}.global-site-brand img{width:188px}
+  .site-header-with-nav .header-inner{width:calc(100% - 40px)}
+  .site-menu-enabled .header-nav,.site-menu-enabled .header-apply{display:none!important}
+}
+@media(max-width:560px){.global-site-header-inner{width:calc(100% - 32px);min-height:65px}.global-site-brand img{width:174px}.site-header-with-nav .header-inner{width:calc(100% - 32px)}}

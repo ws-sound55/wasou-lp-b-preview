@@ -93,3 +93,91 @@
 }
 /* 2026-10-23: keep column title links at the same reading size as their headings. */
 .top-column-card-body h3 a{font:inherit!important;line-height:inherit!important;letter-spacing:inherit!important}
+
+/* 2026-10-24: mobile-only top-page reading refinements. Desktop is unchanged. */
+.top-company-mobile{display:none}
+@media (max-width:560px){
+  /* English section labels: 12px to 15px (approximately 1.25×). */
+  .top-destinations-heading p,
+  .top-eyebrow,
+  .top-next-tag{
+    font-size:15px;
+    line-height:1.45;
+  }
+  .top-destination-kicker{font-size:14px;line-height:1.45}
+  .top-destination-company .top-destination-kicker{font-size:12px}
+
+  /* Case status labels: 14px to 17px (approximately 1.2×). */
+  .top-case-card dt{font-size:17px;line-height:1.7;letter-spacing:.075em}
+
+  /* Keep the requested company-banner line units together. */
+  .top-destination-company h3{
+    font-size:clamp(20px,5.7vw,22px)!important;
+    line-height:1.55!important;
+  }
+  .top-company-desktop{display:none}
+  .top-company-mobile{display:block}
+  .top-destination-company{padding-left:12px!important;padding-right:12px!important}
+  .top-company-line{display:block;white-space:nowrap}
+
+  /* CASE 01: do not separate the number from 年間; use two meaningful lines. */
+  .top-case-before span{display:block;white-space:nowrap}
+  .top-case-before span:first-child::after{content:""}
+
+  /* Service titles: 18px to 22px (approximately 1.2×). */
+  .top-service-grid h3{font-size:22px;line-height:1.58}
+
+  /* Make the service-detail action a large, tappable two-line button. */
+  .top-services-action{margin-top:42px}
+  .top-services-action .top-text-arrow{
+    position:relative;
+    display:grid;
+    gap:0;
+    width:100%;
+    min-height:102px;
+    padding:18px 54px 18px 20px;
+    border:1px solid var(--teal);
+    border-bottom:1px solid var(--teal);
+    font-size:28px;
+    line-height:1.35;
+    text-align:center;
+    text-decoration:none;
+  }
+  .top-services-action .top-text-arrow span{display:block;white-space:nowrap}
+  .top-services-action .top-text-arrow:after{
+    position:absolute;
+    right:19px;
+    top:50%;
+    margin:0;
+    transform:translateY(-50%);
+  }
+
+  /* Preserve the formal 23px message at 390px and above. */
+  .top-aim-message{
+    font-size:23px!important;
+    line-height:1.45!important;
+    letter-spacing:0!important;
+    white-space:nowrap;
+  }
+  .top-aim-message span{display:inline;white-space:nowrap}
+
+  /* The source PNG is opaque white; filtering it to white made it disappear. */
+  .corporate-footer img{
+    display:block;
+    filter:none;
+    opacity:1;
+  }
+}
+
+@media (min-width:561px){
+  .top-case-before span{display:inline}
+  .top-case-before span:first-child::after{content:"、"}
+  .top-company-line,.top-aim-message span,.top-services-action .top-text-arrow span{display:inline}
+}
+
+/* A 16-character 23px Japanese sentence needs about 368px before side padding.
+   At 320/360/375px, keep the original wording in two meaningful units instead. */
+@media (max-width:389px){
+  .top-aim-message{white-space:normal}
+  .top-aim-message span{display:block}
+}

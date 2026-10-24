@@ -181,10 +181,3 @@
   .top-aim-message{white-space:normal}
   .top-aim-message span{display:block}
 }
-
-/* At 360px and 375px, use only this message's side gutter to keep the
-   official wording in one readable 23px line. */
-@media (min-width:360px) and (max-width:389px){
-  .top-aim-message{margin-left:-16px;margin-right:-16px;white-space:nowrap}
-  .top-aim-message span{display:inline}
-}

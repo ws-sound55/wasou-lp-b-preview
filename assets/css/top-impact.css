@@ -181,3 +181,43 @@
   .top-aim-message{white-space:normal}
   .top-aim-message span{display:block}
 }
+
+/* 2026-10-24: follow-up mobile-only line composition. Desktop stays unchanged. */
+.top-service-banner-mobile,.top-services-heading-mobile,.top-profile-mobile{display:none}
+@media (max-width:560px){
+  .top-service-banner-desktop,.top-services-heading-desktop,.top-profile-desktop{display:none}
+  .top-service-banner-mobile,.top-services-heading-mobile,.top-profile-mobile{display:block}
+
+  /* Destination-service banner: keep the requested units as two complete lines. */
+  .top-service-banner-mobile span{display:block;white-space:nowrap}
+
+  /* CASE 02: keep the amount and the closing particle on the first line. */
+  .top-case02-before span{display:block;white-space:nowrap}
+
+  /* OUR SERVICES heading: mobile-only copy and two balanced, readable lines. */
+  .top-services .top-section-heading h2{
+    font-size:23px!important;
+    line-height:1.6!important;
+    letter-spacing:0!important;
+  }
+  .top-services-heading-mobile span{display:block;white-space:nowrap}
+
+  /* Keep the service CTA on one line while retaining an accessible tap target. */
+  .top-services-action{margin-top:34px}
+  .top-services-action .top-text-arrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:48px;
+    padding:10px 44px 10px 16px;
+    font-size:17px;
+    line-height:1.4;
+    white-space:nowrap;
+  }
+  .top-services-action .top-text-arrow span{display:inline;white-space:nowrap}
+  .top-services-action .top-text-arrow:after{right:16px}
+
+  /* Show the same two-line title below the photo and in the text profile. */
+  .top-profile-mobile span{display:block;white-space:nowrap}
+}

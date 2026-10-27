@@ -191,7 +191,7 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
   .intro p:last-child { padding-left: 17px; }
   .section-heading { margin-bottom: 30px; }
   .takeaway-index { display: grid; grid-template-columns: 1fr; gap: 10px; }
-  .takeaway-index a, .takeaway-index a:nth-child(-n+3), .takeaway-index a:nth-child(4), .takeaway-index a:nth-child(5) { display: block; grid-column: auto; min-height: auto; padding: 14px 10px 14px; border-top-width: 2px; }
+  .takeaway-index a, .takeaway-index a:nth-child(-n+3), .takeaway-index a:nth-child(4), .takeaway-index a:nth-child(5) { display: block; grid-column: auto; min-height: auto; padding: 14px 4px 14px; border-top-width: 2px; }
   .takeaway-index > a > span:first-child { display: block; width: auto; margin-bottom: 6px; padding: 0; color: var(--red); font-size: 21px; line-height: 1; }
   .takeaway-index strong { display: block; font-size: 16px; line-height: 1.5; }
   .takeaway-index small { display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; }
@@ -199,7 +199,10 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
   .card-copy-desktop { display: none; }
   .card-copy-mobile { display: grid; gap: 0; }
   .card-copy-mobile > span { display: block; }
-  .card-title-mobile { display: block; white-space: nowrap; font-size: clamp(14px, 4.2vw, 16px); font-weight: 900; line-height: 1.5; letter-spacing: 0; text-shadow: .15px 0 currentColor; }
+  .card-title-mobile { display: block; white-space: nowrap; font-size: clamp(15.4px, 4.62vw, 17.6px); font-weight: 900; line-height: 1.5; letter-spacing: 0; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-shadow: .2px 0 currentColor; }
+  .takeaway-index-03 .card-copy-mobile { display: block; white-space: nowrap; }
+  .takeaway-index-03 .card-copy-mobile > span { display: inline; }
+  .takeaway-index-03 small { font-size: 14px; }
   .takeaways .section-heading h2 { font-size: clamp(19px, 6.2vw, 23px); line-height: 1.68; letter-spacing: 0; }
   .takeaways-title-desktop { display: none; }
   .takeaways-title-mobile { display: grid; gap: 0; }

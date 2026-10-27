@@ -1,12 +1,23 @@
 (() => {
   const primaryApply = document.querySelector('[data-apply-primary]');
+  const normalApplies = [...document.querySelectorAll('[data-apply-normal]')];
   const mobileApply = document.querySelector('[data-mobile-apply]');
 
-  if (primaryApply && mobileApply) {
+  if (primaryApply && normalApplies.length && mobileApply) {
+    let rafId = 0;
     const updateMobileApply = () => {
-      const { bottom } = primaryApply.getBoundingClientRect();
-      mobileApply.classList.toggle('is-visible', bottom <= 0);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const viewportInset = 36;
+        const primaryHasPassed = primaryApply.getBoundingClientRect().bottom <= 0;
+        const normalApplyIsVisible = normalApplies.some(button => {
+          const rect = button.getBoundingClientRect();
+          return rect.bottom > viewportInset && rect.top < window.innerHeight - viewportInset;
+        });
+        mobileApply.classList.toggle('is-visible', primaryHasPassed && !normalApplyIsVisible);
+      });
     };
+
     window.addEventListener('scroll', updateMobileApply, { passive: true });
     window.addEventListener('resize', updateMobileApply);
     updateMobileApply();

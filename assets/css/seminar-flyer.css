@@ -79,6 +79,7 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
 .takeaway-index em { align-self: start; justify-self: start; margin-top: 3px; color: var(--red); font-size: 13px; font-style: normal; font-weight: 700; line-height: 1.4; }
 .card-copy-desktop { display: inline; }
 .card-copy-mobile { display: none; }
+.card-title-mobile { display: none; }
 
 .detail-list { display: grid; gap: 0; }
 .takeaway-detail { position: relative; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 34px; padding: 62px 0; border-top: 1px solid var(--line); scroll-margin-top: 26px; }
@@ -99,6 +100,8 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
 .reassurance p:last-child { margin-bottom: 0; }
 
 .results .section-heading { margin-bottom: 36px; }
+.results-title-desktop { display: block; }
+.results-title-mobile { display: none; }
 .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .result-card { overflow: hidden; background: #fff; border: 1px solid var(--line); }
 .result-card h3 { margin: 0; padding: 18px 18px 16px; color: #fff; background: var(--navy); font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.5; text-align: center; }
@@ -129,6 +132,8 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
 .schedule-list > div { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 18px; padding: 18px 8px; border-bottom: 1px solid var(--line); }
 .schedule-list dt { color: var(--navy); font-size: 15px; font-weight: 700; }
 .schedule-list dd { margin: 0; }
+.schedule-title-desktop { display: block; }
+.schedule-title-mobile { display: none; }
 
 .faq h2 { margin-bottom: 32px; }
 .faq-list { border-top: 1px solid var(--line); }
@@ -186,18 +191,20 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
   .intro p:last-child { padding-left: 17px; }
   .section-heading { margin-bottom: 30px; }
   .takeaway-index { display: grid; grid-template-columns: 1fr; gap: 10px; }
-  .takeaway-index a, .takeaway-index a:nth-child(-n+3), .takeaway-index a:nth-child(4), .takeaway-index a:nth-child(5) { grid-column: auto; grid-template-columns: 40px minmax(0, 1fr); grid-template-rows: auto auto auto; gap: 4px 10px; min-height: auto; padding: 16px 15px 15px; border-top-width: 2px; }
-  .takeaway-index > a > span:first-child { grid-row: span 3; align-self: start; padding-top: 2px; font-size: 22px; }
-  .takeaway-index strong { font-size: 16px; line-height: 1.5; }
-  .takeaway-index small { font-size: 15px; line-height: 1.55; }
-  .takeaway-index em { grid-column: 2; margin-top: 2px; font-size: 13px; }
+  .takeaway-index a, .takeaway-index a:nth-child(-n+3), .takeaway-index a:nth-child(4), .takeaway-index a:nth-child(5) { display: block; grid-column: auto; min-height: auto; padding: 14px 10px 14px; border-top-width: 2px; }
+  .takeaway-index > a > span:first-child { display: block; width: auto; margin-bottom: 6px; padding: 0; color: var(--red); font-size: 21px; line-height: 1; }
+  .takeaway-index strong { display: block; font-size: 16px; line-height: 1.5; }
+  .takeaway-index small { display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; }
+  .takeaway-index em { display: block; margin-top: 5px; font-size: 13px; }
   .card-copy-desktop { display: none; }
   .card-copy-mobile { display: grid; gap: 0; }
   .card-copy-mobile > span { display: block; }
-  .takeaways .section-heading h2 { font-size: 23px; line-height: 1.68; letter-spacing: .01em; }
+  .card-title-mobile { display: block; white-space: nowrap; font-size: clamp(14px, 4.2vw, 16px); font-weight: 900; line-height: 1.5; letter-spacing: 0; text-shadow: .15px 0 currentColor; }
+  .takeaways .section-heading h2 { font-size: clamp(19px, 6.2vw, 23px); line-height: 1.68; letter-spacing: 0; }
   .takeaways-title-desktop { display: none; }
   .takeaways-title-mobile { display: grid; gap: 0; }
   .takeaways-title-mobile > span { display: block; }
+  .takeaways-title-mobile > span:first-child { white-space: nowrap; }
   .takeaway-detail { grid-template-columns: 1fr; gap: 8px; padding: 48px 0; scroll-margin-top: 16px; }
   .detail-number { font-size: 50px; }
   .detail-content h2 { margin-bottom: 22px; font-size: 24px; line-height: 1.58; }
@@ -212,15 +219,24 @@ h2 { color: var(--navy); font-family: var(--serif); font-size: clamp(27px, 3.15v
   .result-card .result-period { font-size: 15px; }
   .result-card dd strong { font-size: 22px; }
   .results-note { margin-top: 26px; }
+  .results .section-heading h2 { font-size: clamp(18px, 5.8vw, 27px); line-height: 1.6; letter-spacing: 0; }
+  .results-title-desktop { display: none; }
+  .results-title-mobile { display: grid; gap: 0; }
+  .results-title-mobile > span { display: block; }
   .lecturer-grid { grid-template-columns: 1fr; gap: 34px; }
   .lecturer-photo { width: min(320px, 100%); }
-  .lecturer-copy h2 { font-size: 25px; }
+  .lecturer-copy h2 { font-size: clamp(20px, 6.3vw, 25px); letter-spacing: 0; }
   .lecturer-title-desktop { display: none; }
-  .lecturer-title-mobile { display: block; }
+  .lecturer-title-mobile { display: block; white-space: nowrap; }
   .credentials { display: grid; gap: 8px; }
   .credentials strong + strong::before { display: none; }
   .schedule-list > div { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; padding: 16px 0; }
   .schedule-list dt { font-size: 14px; }
+  .schedule-list > .schedule-seminar-name { display: block; padding: 16px 0; }
+  .schedule-seminar-name dt { margin-bottom: 4px; }
+  .schedule-title-desktop { display: none; }
+  .schedule-title-mobile { display: grid; gap: 0; font-size: clamp(15px, 4.8vw, 16px); line-height: 1.7; letter-spacing: 0; }
+  .schedule-title-mobile > span { display: block; white-space: nowrap; }
   .faq summary { padding: 19px 38px 19px 0; font-size: 16px; }
   .final-message h2 { font-size: 26px; }
   .footer-inner { grid-template-columns: 1fr; gap: 18px; }

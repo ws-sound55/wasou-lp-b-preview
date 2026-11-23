@@ -17,3 +17,35 @@ html,body{max-width:100%;overflow-x:clip}
 @media (max-width: 560px) {
   .service-actions .button .jp-keep { display: inline-block; }
 }
+
+/* 2026-11-23: keep desktop FAQ layout; let mobile question text wrap separately. */
+.faq-section .faq-question-text { display: contents; }
+.faq-section .faq-question-word { display: contents; }
+@media (max-width: 640px) {
+  .faq-section .faq-question {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) 25px;
+    column-gap: 10px;
+  }
+  .faq-section .faq-question::before { margin-right: 0; }
+  .faq-section .faq-question::after {
+    width: 25px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .faq-section .faq-question-text {
+    display: block;
+    min-width: 0;
+    white-space: normal;
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
+  }
+  .faq-section .faq-question-text .jp-keep {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+    text-wrap: balance;
+  }
+  /* Only the two-character words in the FAQ markup use this narrow keep rule. */
+  .faq-section .faq-question-word { display: inline; white-space: nowrap; }
+}

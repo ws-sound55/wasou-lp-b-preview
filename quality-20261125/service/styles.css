@@ -49,3 +49,28 @@ html,body{max-width:100%;overflow-x:clip}
   /* Only the two-character words in the FAQ markup use this narrow keep rule. */
   .faq-section .faq-question-word { display: inline; white-space: nowrap; }
 }
+
+/* 2026-11-25: keep the family-governance section inside its mobile grid track. */
+@media (max-width: 900px) {
+  #family > .service-layout { grid-template-columns: minmax(0, 1fr); }
+  #family > .service-layout > .service-heading,
+  #family > .service-layout > .service-body { min-width: 0; }
+}
+@media (max-width: 640px) {
+  #family .service-actions .button {
+    display: block;
+    white-space: normal;
+    text-wrap: balance;
+  }
+  #family .service-actions .button > .jp-keep:first-child {
+    display: inline;
+    white-space: normal;
+  }
+  #family .service-actions .button .family-cta-topic {
+    white-space: nowrap;
+  }
+  #family .service-actions .button > .jp-keep:last-child {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}

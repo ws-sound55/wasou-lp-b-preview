@@ -91,3 +91,11 @@ html,body{max-width:100%;overflow-x:clip}
     margin-top: 18px;
   }
 }
+
+/* 2026-11-25: keep desktop/tablet diagram note clear of the unchanged orbit. */
+@media (min-width: 641px) {
+  .service-hero .hero-frame > p:last-child {
+    position: static;
+    margin-top: 18px;
+  }
+}

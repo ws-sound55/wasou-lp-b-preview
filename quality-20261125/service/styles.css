@@ -74,3 +74,20 @@ html,body{max-width:100%;overflow-x:clip}
     white-space: nowrap;
   }
 }
+
+/* 2026-11-25: keep the narrow hero copy inside its existing mobile shell. */
+@media (max-width: 360px) {
+  .service-hero .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .service-hero .hero-copy { min-width: 0; }
+}
+@media (max-width: 339px) {
+  .service-hero h1 { max-width: 8.5em; }
+}
+
+/* 2026-11-25: place the approved mobile diagram note below the orbit. */
+@media (max-width: 640px) {
+  .service-hero .hero-frame > p:last-child {
+    position: static;
+    margin-top: 18px;
+  }
+}

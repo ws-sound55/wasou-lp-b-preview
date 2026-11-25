@@ -1,1 +1,74 @@
-.site-page-top{position:fixed;right:24px;bottom:24px;z-index:25;display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0;padding:0;border:0;border-radius:50%;background:#102A43;color:#FFFFFF;font:600 26px/1 sans-serif;cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,visibility .2s ease}.site-page-top.is-visible{opacity:1;visibility:visible;pointer-events:auto}.site-page-top:focus-visible{outline:3px solid #18A6A6;outline-offset:3px}@media(max-width:767px){.site-page-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:52px;height:52px}.site-page-top.has-mobile-cta{bottom:calc(76px + env(safe-area-inset-bottom))}}
+/* Repeated class deliberately outranks legacy per-page hide rules.
+   Only this shared control is affected; page content and CTA styling stay intact. */
+body .site-page-top.site-page-top {
+  --page-top-gap: 24px;
+  --page-top-obstruction: 0px;
+  position: fixed;
+  right: calc(var(--page-top-gap) + env(safe-area-inset-right, 0px));
+  /* The measured obstruction already includes the CTA's bottom safe-area inset. */
+  bottom: max(
+    calc(var(--page-top-gap) + env(safe-area-inset-bottom, 0px)),
+    calc(var(--page-top-obstruction) + 12px)
+  );
+  z-index: 25;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #102A43;
+  color: #FFFFFF;
+  font: 600 26px/1 sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* Hide immediately when focus/ARIA state changes; only entry fades in. */
+  transition: opacity .2s ease;
+}
+
+body .site-page-top.site-page-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body .site-page-top.site-page-top[aria-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body .site-page-top.site-page-top:focus-visible {
+  outline: 3px solid #18A6A6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  body .site-page-top.site-page-top {
+    --page-top-gap: 16px;
+  }
+}
+
+/* Immediate visual suppression while the menu JS updates accessible state.
+   Also applies to the menu's real-width compact mode above 1100px. */
+.site-menu-open .site-page-top.site-page-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .site-page-top.site-page-top {
+    transition: none;
+  }
+}

@@ -15,16 +15,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/seminar-flyer.css?v=20261027-support-oneline-01">
   <script src="../assets/js/seminar-flyer.js?v=20261027-support-oneline-01" defer></script>
+
+<link rel="stylesheet" href="../assets/css/site-menu.css?v=20261125-common-ui1">
+<link rel="stylesheet" href="../assets/css/page-top.css?v=20261125-common-ui1">
+<script src="../assets/js/site-menu.js?v=20261125-common-ui1" defer></script>
+<script src="../assets/js/page-top.js?v=20261125-common-ui1" defer></script>
 </head>
-<body>
+<body class="site-menu-enabled">
+<button class="site-menu-trigger" type="button" aria-label="メニューを開く" aria-controls="siteMobileNav" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="site-mobile-nav" id="siteMobileNav" aria-label="サイトメニュー" hidden><div class="site-mobile-nav-head"><span class="site-mobile-nav-title">MENU</span><button class="site-mobile-nav-close" type="button" aria-label="メニューを閉じる">×</button></div><div class="site-mobile-nav-links"><a href="/">TOPページ</a><a href="/family/">なぜファミリー企業</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar-flyer/" aria-current="page">セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">ご相談・お問い合わせ</a></div></nav>
+
   <a class="skip-link" href="#main-content">本文へ移動</a>
 
   <header class="flyer-header">
     <div class="site-width flyer-header-inner">
       <div class="flyer-brand">
-        <img src="../assets/images/logo.png" alt="和奏人事パートナーズ" width="1774" height="583">
+        <a href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="../assets/images/logo.png" alt="和奏人事パートナーズ" width="1774" height="583"></a>
       </div>
       <p>オンライン・無料セミナー</p>
+      <nav class="site-desktop-nav" aria-label="主要メニュー"><a href="/family/">なぜファミリー企業</a><a href="/philosophy/">私たちの想い</a><a href="/service/">サービス</a><a href="/family-governance/">ファミリーガバナンス</a><a href="/seminar-flyer/" aria-current="page">セミナー</a><a href="/column/">コラム</a><a href="/company/">会社概要</a><a href="/contact/">ご相談・お問い合わせ</a></nav>
     </div>
   </header>
 
@@ -230,12 +239,14 @@
 
   <footer class="flyer-footer">
     <div class="site-width footer-inner">
-      <div class="footer-brand"><img src="../assets/images/logo.png" alt="和奏人事パートナーズ" width="1774" height="583"><p>和奏人事パートナーズ<br>株式会社和装コンサルタンツ</p></div>
+      <div class="footer-brand"><a href="/" aria-label="和奏人事パートナーズ トップページへ"><img src="../assets/images/logo.png" alt="和奏人事パートナーズ" width="1774" height="583"></a><p>和奏人事パートナーズ<br>株式会社和装コンサルタンツ</p></div>
       <div class="footer-contact"><p>〒108-0074<br>東京都港区高輪2-14-17 グレイス高輪ビル8階</p><p>TEL：03-6869-6780<br><a href="https://wasou-jinji.jp/">https://wasou-jinji.jp/</a></p></div>
       <nav aria-label="関連リンク"><a href="../privacy.html">プライバシーポリシー</a><a href="../contact/">ご相談・お問い合わせ</a></nav>
     </div>
   </footer>
 
   <a class="mobile-apply" data-mobile-apply href="https://reserve.peraichi.com/r/b194f80c" target="_blank" rel="noopener noreferrer" aria-label="開催日程を確認して無料で申し込む">開催日程・無料申込み<span aria-hidden="true">→</span></a>
+
+<button class="site-page-top" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る"><span aria-hidden="true">↑</span></button>
 </body>
 </html>

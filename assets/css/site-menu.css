@@ -1,42 +1,79 @@
-
-/* 2026-10-23: 共通ナビゲーション（PCは余白を保ち、1100px以下は一列メニュー） */
-.site-desktop-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.2vw,22px);margin-left:auto;min-width:0}
+/* 2026-11-25: 既存のヘッダー・文字サイズを保つ共通ナビゲーション。
+   1100px以下、または実幅不足（JSの.site-nav-compact）でモバイルメニューへ。 */
+.site-desktop-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.1vw,16px);margin-left:auto;min-width:0}
 .site-desktop-nav a{color:#102A43;font-size:14px;font-weight:600;line-height:1.5;text-decoration:none;white-space:nowrap}
 .site-desktop-nav a:last-child{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;background:#102A43;color:#fff}
 .site-desktop-nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:5px}
 .site-menu-trigger,.site-mobile-nav{display:none}
-.site-menu-open{overflow:hidden}
-@media(max-width:1100px){
-  .site-menu-enabled .menu-button,.site-menu-enabled .header-link,.site-menu-enabled .desktop-nav,.site-menu-enabled .family-desktop-nav,.site-menu-enabled .corporate-desktop-nav,.site-menu-enabled .column-desktop-nav,.site-menu-enabled .site-desktop-nav{display:none!important}
-  .site-menu-trigger{position:fixed;z-index:2001;top:calc(12px + env(safe-area-inset-top));right:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;padding:0;border:1px solid #102A43;border-radius:0;background:#FFFFFF;color:#102A43;cursor:pointer}
-  .site-menu-trigger span{display:block;width:23px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
-  .site-menu-trigger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .site-menu-trigger.is-open span:nth-child(2){opacity:0}
-  .site-menu-trigger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .site-menu-trigger:focus-visible,.site-mobile-nav a:focus-visible,.site-mobile-nav-close:focus-visible{outline:3px solid #18A6A6;outline-offset:3px}
-  .site-mobile-nav{display:block;position:fixed;z-index:2000;top:0;right:0;left:0;max-height:100dvh;overflow-y:auto;padding:calc(20px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));background:#FFFFFF;border-bottom:1px solid #DDE2E5;color:#102A43}
-  .site-mobile-nav[hidden]{display:none}
-  .site-mobile-nav-head{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px solid #DDE2E5}
-  .site-mobile-nav-title{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:14px;font-weight:700;letter-spacing:.14em}
-  .site-mobile-nav-close{display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;background:transparent;color:#102A43;font-size:28px;line-height:1;cursor:pointer}
-  .site-mobile-nav-links{display:grid;grid-template-columns:1fr;margin-top:16px;border-top:1px solid #DDE2E5}
-  .site-mobile-nav-links a{display:flex;align-items:center;min-height:56px;padding:12px 14px;border-bottom:1px solid #DDE2E5;color:#102A43;font-size:16px;font-weight:600;line-height:1.6;text-decoration:none}
-  .site-mobile-nav-links a[aria-current="page"]{background:#EEF4F6;text-decoration:underline;text-underline-offset:4px}
-  .site-mobile-nav-links a:last-child{justify-content:center;margin-top:16px;border:0;background:#102A43;color:#FFFFFF;font-weight:700}
-  .site-menu-enabled .site-page-top{z-index:25}
-}
-@media(min-width:1101px){.site-menu-trigger,.site-mobile-nav{display:none!important}.site-menu-open{overflow:auto}}
+.site-mobile-nav[hidden]{display:none!important}
+html.site-menu-open,body.site-menu-open{overflow:hidden!important;overscroll-behavior:none}
 
+/* ページ固有の書体・色・CTA・ロゴのサイズは上書きしない。
+   flexでロゴや項目を圧縮せず、足りない幅はJSで判定する。 */
+.site-menu-enabled :is(.site-desktop-nav,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav){flex:0 0 auto;flex-wrap:nowrap;gap:clamp(12px,1.1vw,16px)}
+.site-menu-enabled :is(.site-desktop-nav,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav)>a{flex:0 0 auto;white-space:nowrap}
+.site-menu-enabled :is(.brand,.family-brand,.corporate-brand,.column-brand,.global-site-brand,.flyer-brand){flex:0 0 auto}
+.site-menu-enabled :is(.site-desktop-nav,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav)>a:focus-visible{outline:3px solid #18A6A6;outline-offset:4px}
 
-/* 2026-10-23: 簡潔なページ用の共通PCヘッダー */
+/* 簡潔なページ用の既存共通ヘッダー。 */
 .global-site-header{position:relative;z-index:30;background:#fff;border-bottom:1px solid #dce6ed;color:#102A43}
 .global-site-header-inner{width:min(1240px,calc(100% - 48px));min-height:82px;margin:0 auto;display:flex;align-items:center;gap:28px}
-.global-site-brand{display:block;flex:0 0 auto;line-height:0}.global-site-brand img{display:block;width:205px;max-width:42vw;height:auto}
+.global-site-brand{display:block;flex:0 0 auto;line-height:0}
+.global-site-brand img{display:block;width:205px;max-width:100%;height:auto}
 .site-header-with-nav .header-inner{width:min(1240px,calc(100% - 48px));gap:28px}
 .site-header-with-nav .header-inner .site-desktop-nav{margin-left:auto}
+
+/* セミナーの本文幅1080pxは変更せず、ヘッダーのみ8項目分を確保。
+   元のロゴ・赤い上罫線・セミナー表記を残し、表記はロゴの下へ。 */
+.site-menu-enabled .flyer-header-inner{width:min(1240px,calc(100% - 48px));display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:24px;row-gap:0;align-items:center;padding-top:10px;padding-bottom:10px}
+.site-menu-enabled .flyer-header-inner .flyer-brand{grid-column:1;grid-row:1}
+.site-menu-enabled .flyer-header-inner .site-desktop-nav{grid-column:2;grid-row:1 / span 2;justify-self:end}
+.site-menu-enabled .flyer-header-inner>p{grid-column:1;grid-row:2}
+
+/* trigger/menuはJSでbody直下へ移す。stickyヘッダー等のスタッキング
+   コンテキストに閉じ込めず、family固有のabsolute指定とも干渉しない。 */
+.site-menu-enabled .site-menu-trigger{position:fixed;z-index:2001;top:calc(12px + env(safe-area-inset-top));right:calc(14px + env(safe-area-inset-right));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;box-sizing:border-box;padding:0;border:1px solid #102A43;border-radius:0;background:#fff;color:#102A43;cursor:pointer;touch-action:manipulation}
+.site-menu-enabled .site-menu-trigger span{display:block;width:23px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
+.site-menu-enabled .site-menu-trigger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.site-menu-enabled .site-menu-trigger.is-open span:nth-child(2){opacity:0}
+.site-menu-enabled .site-menu-trigger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* 開いたパネル内の閉じるボタンとtriggerが重ならない。 */
+.site-menu-enabled .site-menu-trigger.is-open{visibility:hidden}
+.site-menu-enabled .site-menu-trigger:focus-visible,.site-menu-enabled .site-mobile-nav a:focus-visible,.site-menu-enabled .site-mobile-nav-close:focus-visible{outline:3px solid #18A6A6;outline-offset:3px}
+.site-menu-enabled .site-mobile-nav{display:block;position:fixed;z-index:2000;inset:0;box-sizing:border-box;width:100%;height:100vh;height:100dvh;max-height:100vh;max-height:100dvh;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:calc(20px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) calc(30px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));background:#fff;border-bottom:1px solid #DDE2E5;color:#102A43;scroll-padding-block:20px;scroll-behavior:auto}
+.site-menu-enabled .site-mobile-nav-head{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;border-bottom:1px solid #DDE2E5}
+.site-menu-enabled .site-mobile-nav-title{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:14px;font-weight:700;letter-spacing:.14em}
+.site-menu-enabled .site-mobile-nav-close{display:flex;flex:0 0 48px;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;background:transparent;color:#102A43;font-size:28px;line-height:1;cursor:pointer;touch-action:manipulation}
+.site-menu-enabled .site-mobile-nav-links{display:grid;grid-template-columns:minmax(0,1fr);margin-top:16px;border-top:1px solid #DDE2E5}
+.site-menu-enabled .site-mobile-nav-links a{display:flex;align-items:center;box-sizing:border-box;min-width:0;min-height:56px;padding:12px 14px;border-bottom:1px solid #DDE2E5;color:#102A43;font-size:16px;font-weight:600;line-height:1.6;text-decoration:none;white-space:normal;overflow-wrap:anywhere;touch-action:manipulation}
+.site-menu-enabled .site-mobile-nav-links a[aria-current="page"]{background:#EEF4F6;text-decoration:underline;text-underline-offset:4px}
+.site-menu-enabled .site-mobile-nav-links a:last-child{justify-content:center;margin-top:16px;border:0;background:#102A43;color:#fff;font-weight:700}
+/* 旧ナビだけを隠す。sitemap-headerの重複撤去はHTML統合側が担当。 */
+.site-menu-enabled .menu-button,.site-menu-enabled .mobile-nav{display:none!important}
+
 @media(max-width:1100px){
-  .global-site-header-inner{width:calc(100% - 40px);min-height:70px}.global-site-brand img{width:188px}
-  .site-header-with-nav .header-inner{width:calc(100% - 40px)}
-  .site-menu-enabled .header-nav,.site-menu-enabled .header-apply{display:none!important}
+  .site-menu-enabled :is(.header-link,.header-nav,.header-apply,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav,.site-desktop-nav){display:none!important}
+  /* 右端48pxのボタン＋16pxの間隔。320pxでもロゴ用226pxを確保。 */
+  .site-menu-enabled :is(.header-inner,.family-header-inner,.corporate-header-inner,.column-header-inner,.global-site-header-inner,.flyer-header-inner){box-sizing:border-box;width:calc(100% - 32px);max-width:none;margin-inline:auto;padding-left:env(safe-area-inset-left);padding-right:calc(62px + env(safe-area-inset-right));gap:0;min-height:72px}
+  .site-menu-enabled .global-site-brand img{width:188px}
+  .site-menu-enabled .flyer-header-inner{display:flex;flex-wrap:wrap;align-content:center;column-gap:0}
+  .site-menu-enabled .flyer-header-inner>p{flex:0 0 100%}
 }
-@media(max-width:560px){.global-site-header-inner{width:calc(100% - 32px);min-height:65px}.global-site-brand img{width:174px}.site-header-with-nav .header-inner{width:calc(100% - 32px)}}
+
+/* 1101px以上でも拡大文字等で収まらない場合に限る実幅フォールバック。 */
+.site-menu-enabled.site-nav-compact :is(.header-link,.header-nav,.header-apply,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav,.site-desktop-nav){display:none!important}
+.site-menu-enabled.site-nav-compact :is(.header-inner,.family-header-inner,.corporate-header-inner,.column-header-inner,.global-site-header-inner,.flyer-header-inner){box-sizing:border-box;width:calc(100% - 32px);max-width:none;margin-inline:auto;padding-left:env(safe-area-inset-left);padding-right:calc(62px + env(safe-area-inset-right));gap:0;min-height:72px}
+.site-menu-enabled.site-nav-compact .flyer-header-inner{display:flex;flex-wrap:wrap;align-content:center;column-gap:0}
+.site-menu-enabled.site-nav-compact .flyer-header-inner>p{flex:0 0 100%}
+
+@media(min-width:1101px){
+  .site-menu-enabled:not(.site-nav-compact) .site-menu-trigger,.site-menu-enabled:not(.site-nav-compact) .site-mobile-nav{display:none!important}
+}
+@media(max-width:560px){
+  .site-menu-enabled :is(.header-inner,.family-header-inner,.corporate-header-inner,.global-site-header-inner){min-height:65px}
+  .site-menu-enabled .global-site-brand img{width:174px}
+}
+@media(prefers-reduced-motion:reduce){
+  html.site-menu-open{scroll-behavior:auto!important}
+  .site-menu-enabled .site-menu-trigger,.site-menu-enabled .site-menu-trigger span,.site-menu-enabled .site-mobile-nav,.site-menu-enabled .site-mobile-nav *,.site-menu-enabled :is(.site-desktop-nav,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav) a,.site-menu-enabled :is(.site-desktop-nav,.desktop-nav,.family-desktop-nav,.corporate-desktop-nav,.column-desktop-nav) a::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

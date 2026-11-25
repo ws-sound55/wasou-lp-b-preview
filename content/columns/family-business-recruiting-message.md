@@ -3,7 +3,9 @@ published: true
 title: ファミリー企業の採用Messageは「自分ごと化」から考える ―「こういう会社なんだ」を「ここで働く自分を想像できる」へ
 title_keep_phrases:
   - 自分ごと化
-  - ここで働く自分を想像できる
+  - ここで働く
+  - 自分を
+  - 想像できる
 slug: family-business-recruiting-message
 categories:
   - recruitment

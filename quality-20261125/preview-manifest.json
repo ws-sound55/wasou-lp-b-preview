@@ -1,7 +1,7 @@
 {
   "source_repository": "ws-sound55/wasou-lp-b",
   "source_branch": "preview/site-quality-20261125",
-  "source_commit": "51763838d42bab04636f56ef2d972a8e7f139e93",
+  "source_commit": "2f1509048d4af8c19a2c0bb20c7dd04da96f9206",
   "baseline_main": "393c6c6754d2ecbd3567f91a647aeb52a786a4c1",
   "preview_prefix": "/wasou-lp-b-preview/quality-20261125",
   "html_files": 25,
@@ -61,7 +61,7 @@
     "column/recruiting-before-job-posting/index.html": "866917aa2c3ca62c59976877fa94ed770474a514406292d933f50cc8f3366e20",
     "column/styles.css": "961ba10ef86feb0e9ef616aac59723f907017d013d2e68c17e05226004e25d4a",
     "column/why-no-applicants/index.html": "f586d63a46fccc4fe4a800e153d24cb7c3ac3ca1d161709964cc94fc3c68f0ed",
-    "company/index.html": "eb9690c5d30db8c32e518ee03f0c39429cc435f7ed14c32f206e7e0e4d6281a9",
+    "company/index.html": "59d579558737aa18e23391941334251eb81c96d996a27372fc301dc89f7c067b",
     "company/styles.css": "274fa4e124fc079f2a3b97be3c00b4d8e7fe92fdb7563616677295d11a990c9a",
     "consultation.html": "febeb0e5c1e55f187237d259fdf12c6f5b57a278906d558a1fda7ced80257ab3",
     "contact/index.html": "18e1dfd4204ebe687ebb6fde8c7bca68ac15e3851e0f60fab42d2a4aad7f9e11",

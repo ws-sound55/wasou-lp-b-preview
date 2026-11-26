@@ -574,7 +574,8 @@ body.recruitment-page{--rec-forest:#183F36;--rec-ivory:#F5F3EB;--rec-sage:#DCE5D
  .rec-understanding-compare>div{padding:22px}
 }
 @media(max-width:360px){
- .rec-brand-panel{padding:23px 19px}
+ .rec-brand-panel{padding:23px 12px}
+ .rec-hero-copy>.rec-button{padding-inline:17px;gap:12px}
  .rec-brand-name{font-size:47px}
  .rec-brand-elements b{font-size:13px}
  .rec-brand-promise{font-size:19px}

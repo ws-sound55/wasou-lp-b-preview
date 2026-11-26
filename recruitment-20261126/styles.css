@@ -1,0 +1,398 @@
+/* Recruitment editorial page — isolated design; common assets retain their own UI. */
+body.recruitment-page{--rec-forest:#183F36;--rec-ivory:#F5F3EB;--rec-sage:#DCE5DB;--rec-gold:#B49A60;--rec-gold-text:#786132;--rec-text:#2E312F;--rec-muted:#5D665F;--rec-line:#CDD5CD;--rec-cta:#087575;margin:0;background:#fff;color:var(--rec-text);font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;font-size:16px;line-height:1.9}
+.recruitment-page *{box-sizing:border-box}
+.recruitment-page a{color:inherit}
+/* Minimum service header/footer rules, copied in scope, without its page styles or clipping. */
+.recruitment-page .site-header{position:relative;z-index:20;background:#fff;border-bottom:1px solid #dce4e8}
+.recruitment-page .header-inner{width:min(1180px,calc(100% - 48px));min-height:82px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.recruitment-page .brand{display:block;line-height:0}
+.recruitment-page .brand img{width:206px;height:auto}
+.recruitment-page .desktop-nav{display:flex;align-items:center;gap:clamp(15px,2vw,30px);color:#102a43;font-family:"Noto Serif JP",serif;font-size:13px;font-weight:600;white-space:nowrap}
+.recruitment-page .desktop-nav a{text-decoration:none}
+.recruitment-page .desktop-nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.recruitment-page .desktop-nav .current{color:#786132;text-decoration:underline;text-underline-offset:6px}
+.recruitment-page .contact-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 20px;border-radius:999px;background:#102a43;color:#fff!important;text-decoration:none!important;font-family:"Noto Sans JP",sans-serif;font-size:13px}
+.recruitment-page .site-footer{padding:35px 24px;background:#102a43;color:rgba(255,255,255,.82)}
+.recruitment-page .footer-inner{width:min(1180px,100%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:34px}
+.recruitment-page .footer-logo{width:205px;height:auto}
+.recruitment-page .footer-copy{font-size:13px;line-height:1.85;text-align:right}
+.recruitment-page .site-mobile-nav-links a[aria-current="location"]{background:#EEF4F6;text-decoration:underline;text-underline-offset:4px}
+.recruitment-page .site-footer-menu a[aria-current="location"]{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.recruitment-page .footer-inner{align-items:flex-start;flex-direction:column}.recruitment-page .footer-copy{text-align:left}}
+@media(max-width:640px){.recruitment-page .brand img{width:174px}.recruitment-page .site-footer{padding:30px 20px}.recruitment-page .footer-logo{width:175px}.recruitment-page .footer-copy{font-size:12px}}
+/* Page type, spacing and accessible controls. */
+.rec-shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+.rec-reading{width:min(820px,100%);margin-inline:auto}
+.rec-section>.rec-reading{width:min(820px,calc(100% - 48px))}
+.rec-section{padding:108px 0;scroll-margin-top:24px}
+.rec-section-heading{margin-bottom:38px}
+.rec-eyebrow{margin:0 0 18px;color:var(--rec-gold-text);font-size:12px;font-weight:700;letter-spacing:.15em;line-height:1.65;overflow-wrap:anywhere}
+.rec-eyebrow::before{content:"";display:block;width:42px;height:2px;margin-bottom:19px;background:var(--rec-gold)}
+.rec-section h2{margin:0;color:var(--rec-forest);font-family:"Noto Serif JP","Yu Mincho",serif;font-size:36px;font-weight:600;line-height:1.6;letter-spacing:.015em;text-wrap:pretty}
+.rec-section h3{color:var(--rec-forest);font-family:"Noto Serif JP","Yu Mincho",serif;font-size:23px;font-weight:600;line-height:1.65;text-wrap:pretty}
+.rec-section p{margin-top:0;margin-bottom:20px}
+.rec-section p:last-child{margin-bottom:0}
+.rec-section :is(h1,h2,h3,p,li){overflow-wrap:break-word}
+.rec-section .jp-orphan-tail{display:inline-block;max-width:100%;white-space:normal;vertical-align:baseline}
+.rec-section :is(.rec-hero-grid,.rec-info-compare,.rec-philosophy-grid,.rec-mind-flow,.rec-understanding-compare,.rec-phase-flow,.rec-method-grid,.rec-job-comparison,.rec-transform-flow,.rec-service-grid,.rec-approach-grid,.rec-case-grid,.rec-process-flow,.rec-article-grid,.rec-final-grid)>*{min-width:0}
+.rec-subheading{margin:34px 0 22px}
+.rec-note{margin:22px 0 0!important;color:var(--rec-muted);font-size:14px;line-height:1.85}
+.rec-diagram-label{color:var(--rec-gold-text);font-size:14px;font-weight:700;letter-spacing:.04em}
+.rec-bullets{margin:22px 0 28px;padding-left:1.3em;line-height:1.9}
+.rec-bullets li{padding-left:.3em;margin-block:10px}
+.rec-bullets li::marker{color:var(--rec-gold-text)}
+.rec-button{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;min-height:56px;max-width:100%;padding:15px 23px;border:1px solid transparent;border-radius:2px;color:#fff!important;font-size:16px;font-weight:600;line-height:1.65;text-align:left;text-decoration:none;transition:background .16s ease,border-color .16s ease}
+.rec-button>span:first-child{min-width:0;white-space:normal;overflow-wrap:break-word;text-wrap:pretty}
+.rec-button-arrow{flex:0 0 auto;font-size:20px;line-height:1}
+.rec-button-primary{background:var(--rec-cta);border-color:var(--rec-cta)}
+.rec-button-primary:hover{background:#075F5F;border-color:#075F5F}
+.rec-button-outline{border-color:var(--rec-forest);background:transparent;color:var(--rec-forest)!important}
+.rec-button-outline:hover{background:var(--rec-forest);color:#fff!important}
+.rec-text-link{display:inline-block;margin-top:30px;padding-block:12px;color:var(--rec-forest)!important;font-weight:600;text-underline-offset:6px}
+.recruitment-page :is(a,button):focus-visible{outline:3px solid #087575;outline-offset:4px}
+.rec-philosophy a:focus-visible,.rec-brand-panel a:focus-visible{outline-color:#F5F3EB}
+.rec-skip-link{position:fixed;z-index:3000;top:12px;left:16px;transform:translateY(-200%);padding:12px 20px;background:#fff;color:#183F36!important}
+.rec-skip-link:focus{transform:none}
+/* 01 — the method is a brand, not a stock-photo block. */
+.rec-hero{padding-top:0;padding-bottom:80px;background:var(--rec-ivory);border-bottom:1px solid var(--rec-line)}
+.rec-breadcrumb{padding:22px 0;color:var(--rec-muted);font-size:13px;line-height:1.65}
+.rec-breadcrumb ol{display:flex;flex-wrap:wrap;gap:8px 15px;margin:0;padding:0;list-style:none}
+.rec-breadcrumb li:not(:last-child)::after{content:"/";margin-left:15px;color:#8A938A}
+.rec-breadcrumb a{text-underline-offset:4px}
+.rec-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:54px;align-items:center;padding-top:40px}
+.rec-shoulder{margin-bottom:18px!important;color:var(--rec-forest);font-size:16px;font-weight:600;line-height:1.8}
+.rec-hero h1{margin:0;color:var(--rec-forest);font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(46px,3.65vw,54px);font-weight:600;line-height:1.58;letter-spacing:.012em}
+.rec-hero h1 span{display:block;white-space:normal;text-wrap:pretty}
+.rec-hero h1 .rec-h1-phrase{display:inline-block;max-width:100%;white-space:normal;text-wrap:normal}
+.rec-hero-sub{margin:28px 0 32px;max-width:560px}
+.rec-hero-sub p:first-child{font-size:20px;font-family:"Noto Serif JP",serif;color:var(--rec-forest);line-height:1.85}
+.rec-brand-panel{position:relative;align-self:stretch;padding:37px 34px 32px;background:var(--rec-forest);color:#fff;border-top:3px solid var(--rec-gold);display:flex;flex-direction:column;justify-content:center}
+.rec-brand-label{color:#E3D4AE;font-size:14px;line-height:1.75}
+.rec-brand-name{margin:6px 0 18px!important;font-family:"Noto Serif JP",serif;font-size:clamp(49px,5.2vw,75px);font-weight:500;line-height:1.3;letter-spacing:-.02em;overflow-wrap:normal!important}
+.rec-brand-name>span{font-size:.47em;margin-left:7px}
+.rec-brand-promise{font-family:"Noto Serif JP",serif;font-size:21px;line-height:1.85}
+.rec-brand-letters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 18px;margin:15px 0 26px;padding:25px 0;border-top:1px solid #738578;border-bottom:1px solid #738578;list-style:none}
+.rec-brand-letters li{min-width:0;text-align:center;position:relative}
+.rec-brand-letters li:not(:nth-child(3n))::after{content:"";position:absolute;top:23px;right:-15px;width:12px;border-top:1px solid var(--rec-gold)}
+.rec-brand-letters span{display:flex;align-items:center;justify-content:center;width:46px;height:46px;margin:0 auto 8px;border:1px solid var(--rec-gold);border-radius:50%;color:#E3D4AE;font-family:"Noto Serif JP",serif;font-size:24px;line-height:1}
+.rec-brand-letters b{display:block;font-size:13px;font-weight:500;line-height:1.5;overflow-wrap:anywhere}
+.rec-brand-body{font-size:16px;line-height:1.9}
+.rec-brand-body p:last-child{color:#DCE5DB;font-size:14px;line-height:1.85}
+.rec-brand-panel .rec-button{margin-top:25px;border-color:#B49A60;color:#fff!important;background:transparent;font-size:15px}
+.rec-brand-panel .rec-button:hover{background:#274F44}
+/* 02 — the voice of the owner, without card chrome. */
+.rec-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;row-gap:0;margin:40px 0 0;padding:0;list-style:none}
+.rec-checklist li{position:relative;padding:23px 0 23px 29px;border-top:1px solid var(--rec-line);line-height:1.9}
+.rec-checklist li::before{content:"✓";position:absolute;left:0;top:24px;color:var(--rec-gold-text);font-weight:700}
+.rec-checklist li:nth-last-child(-n+2){border-bottom:1px solid var(--rec-line)}
+.rec-after-list{margin-top:38px}
+.rec-after-list p:last-child{color:var(--rec-forest);font-family:"Noto Serif JP",serif;font-size:21px}
+/* 03 — conditions AND the value of working here. */
+.rec-rethink{background:var(--rec-sage)}
+.rec-pullquote{margin:35px 0!important;padding:28px 0;border-top:1px solid var(--rec-gold);border-bottom:1px solid var(--rec-gold);font-family:"Noto Serif JP",serif;font-size:25px;font-weight:600;line-height:1.85;color:var(--rec-forest)}
+.rec-info-compare{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;margin:34px 0 38px;background:#F5F3EB;border:1px solid #BCC9BC;padding:29px}
+.rec-info-compare>div+div{padding-left:28px;border-left:1px solid #B6C5B5}
+.rec-info-compare h3{margin:0;font-size:22px;line-height:1.9}
+.rec-info-compare .rec-bullets{margin:0;padding-left:1.2em}
+.rec-info-compare .rec-bullets li{margin:0 0 12px}
+.rec-conclusion{margin-top:30px!important;color:var(--rec-forest);font-family:"Noto Serif JP",serif;font-size:25px;font-weight:600;line-height:1.85}
+/* 04 — a manifesto with spacious viewpoint changes. */
+.rec-philosophy{background:var(--rec-forest);color:#fff;padding-block:118px}
+.rec-philosophy .rec-eyebrow{color:#E3D4AE}
+.rec-philosophy h2{color:#F5F3EB;font-size:clamp(40px,4.1vw,56px);line-height:1.65}
+.rec-philosophy h2::after{content:"";display:block;width:120px;height:2px;background:var(--rec-gold);margin-top:27px}
+.rec-philosophy-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:70px;margin-top:48px}
+.rec-prose p{line-height:2}
+.rec-perspective{align-self:start;border-top:1px solid #789082}
+.rec-perspective p{display:grid;grid-template-columns:minmax(0,1fr) 27px minmax(0,1fr);gap:12px;align-items:center;margin:0!important;padding:26px 0;border-bottom:1px solid #789082;font-size:18px;line-height:1.9}
+.rec-perspective strong{color:#E3D4AE;font-weight:600}
+.rec-turn-arrow{color:#E3D4AE;text-align:center;font-size:24px}
+.rec-philosophy-close{margin-top:47px;padding-top:36px;border-top:1px solid #789082}
+.rec-philosophy-close p:last-child{font-family:"Noto Serif JP",serif;font-size:25px;color:#E3D4AE}
+/* 05 — horizontal conceptual steps; no probability / numeric chart. */
+.rec-jobseekers .rec-reading .rec-subheading{margin-top:0}
+.rec-mind-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 26px;margin:44px 0 0;padding:0;list-style:none}
+.rec-mind-step{position:relative;min-width:0;padding:24px 22px;border-top:2px solid #7D9684;background:#F1F5EF}
+.rec-mind-step:not(:nth-child(4n))::after{content:"→";position:absolute;top:37px;right:-23px;width:20px;color:var(--rec-gold-text);font-size:20px;line-height:1}
+.rec-step-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.rec-step-head h3{margin:0;font-size:21px}
+.rec-step-number{color:var(--rec-gold-text);font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.4}
+.rec-mind-step p{margin-bottom:10px;font-size:16px}
+.rec-inner-voice{padding-top:14px;border-top:1px solid #CDD5CD;color:var(--rec-muted);font-size:15px!important;line-height:1.85}
+.rec-mind-focus{background:#F3EAD4;border:2px solid var(--rec-gold);padding:22px 20px}
+.rec-focus-label{display:inline-block;margin-bottom:14px;color:var(--rec-gold-text);font-size:13px;font-weight:700}
+.rec-assimilation-title{margin:62px 0 25px;font-size:29px!important;line-height:1.7!important}
+.rec-understanding-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0 36px}
+.rec-understanding-compare>div{position:relative;padding:28px;border-top:2px solid #819486;background:#F0F4EE}
+.rec-understanding-compare .rec-understanding-focus{border-color:var(--rec-gold);background:#F3EAD4}
+.rec-compare-mark{display:block;color:var(--rec-gold-text);font-size:13px;letter-spacing:.12em}
+.rec-understanding-compare h3{margin:7px 0 13px;font-size:24px}
+.rec-understanding-compare p{font-size:19px;font-family:"Noto Serif JP",serif;line-height:1.85}
+/* 06 — the core method feature: overview relationship then detailed meanings. */
+.rec-method{background:var(--rec-ivory);border-block:1px solid #E0DECf}
+.rec-method-overline{margin-bottom:12px!important;color:var(--rec-gold-text);font-size:16px;font-weight:600}
+.rec-method-name{margin:0 0 42px!important;font-family:"Noto Serif JP",serif;font-size:clamp(60px,8vw,104px);line-height:1.5;font-weight:500;color:var(--rec-forest);letter-spacing:-.03em;overflow-wrap:normal!important}
+.rec-method-name>span{font-size:.46em;letter-spacing:0;margin-left:14px}
+.rec-phase-flow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr) minmax(0,1.1fr);gap:42px;margin:50px 0 58px;padding:0;list-style:none}
+.rec-phase{position:relative;padding:28px 25px;border:1px solid #B8C6B8;border-top:3px solid var(--rec-forest);background:#fff}
+.rec-phase:not(:last-child)::after{content:"→";position:absolute;top:calc(50% - 12px);right:-34px;width:25px;font-size:24px;line-height:1;color:var(--rec-gold-text)}
+.rec-phase-label{margin-bottom:16px!important;color:var(--rec-gold-text);font-size:12px;font-weight:700;letter-spacing:.16em}
+.rec-phase-english{margin-bottom:13px!important;color:var(--rec-forest);font-size:22px;font-family:"Noto Serif JP",serif;line-height:1.7;overflow-wrap:normal!important}
+.rec-phase p:last-of-type{font-weight:500;line-height:1.9}
+.rec-phase-persona{background:#EDE2C5;border:2px solid var(--rec-gold);border-top-width:3px}
+.rec-phase-persona .rec-phase-english{font-size:35px}
+.rec-persona-bridge{display:block;margin-top:20px;padding-top:16px;border-top:1px solid #B49A60;color:#64512B;font-size:14px;line-height:1.8;font-weight:600}
+.rec-method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 30px}
+.rec-method-card{padding:29px 26px;border-top:2px solid var(--rec-forest);background:#fff}
+.rec-method-persona{border-color:var(--rec-gold);background:#F4EDD9}
+.rec-method-title{display:flex;gap:20px;align-items:center;min-width:0;padding-bottom:22px;border-bottom:1px solid var(--rec-line)}
+.rec-method-initial{display:block;flex:0 0 47px;color:var(--rec-forest);font-family:"Noto Serif JP",serif;font-size:57px;line-height:1.2}
+.rec-method-title h3{min-width:0;margin:0;font-size:20px;line-height:1.7}
+.rec-method-title h3 span{display:block;margin-bottom:6px;font-family:"Noto Sans JP",sans-serif;font-size:16px;letter-spacing:.02em}
+.rec-method-question{margin:23px 0!important;color:var(--rec-forest);font-family:"Noto Serif JP",serif;font-size:22px;font-weight:600;line-height:1.85}
+.rec-method-text p{font-size:16px;line-height:1.95}
+.rec-method-closing{margin-top:58px;padding:44px 0 0;border-top:1px solid var(--rec-gold)}
+.rec-method-closing h3{margin:0 0 30px;font-size:36px;line-height:1.8;font-weight:500}
+.rec-method-closing .rec-button{margin-top:18px}
+/* 07 — two fair fictional job adverts and the value-to-language process. */
+.rec-job-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin:36px 0 40px}
+.rec-job-mock{display:flex;flex-direction:column;padding:33px 30px;background:#F3F4F2;border:1px solid #B9C1B8;border-top:4px solid #7F8B7E}
+.rec-job-mock-method{background:var(--rec-ivory);border-top-color:var(--rec-forest)}
+.rec-mock-label{margin-bottom:25px!important;font-size:14px;font-weight:600;color:var(--rec-muted)}
+.rec-job-mock-method .rec-mock-label{color:var(--rec-forest)}
+.rec-job-mock h3{margin:0 0 26px;font-size:28px;line-height:1.85}
+.rec-job-mock:first-child h3{color:#485348}
+.rec-mock-body{margin-top:auto;padding-top:22px;border-top:1px solid #BCC6BB}
+.rec-mock-body p{font-size:16px;line-height:1.95}
+.rec-concept-note,.rec-message-note{margin-top:32px;padding:25px 0 25px 24px;border-left:3px solid var(--rec-gold)}
+.rec-message-note{border-left-color:var(--rec-forest)}
+.rec-concept-note>p:nth-child(2),.rec-message-note>p:nth-child(2){font-size:23px;font-family:"Noto Serif JP",serif;color:var(--rec-forest);line-height:1.85}
+.rec-transform-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin:47px 0;padding:0;list-style:none}
+.rec-transform-flow li{position:relative;padding:26px 22px;border-top:2px solid var(--rec-gold);background:#EFF3EC}
+.rec-transform-flow li:not(:last-child)::after{content:"→";position:absolute;top:41px;right:-25px;width:20px;color:var(--rec-gold-text);font-size:20px;line-height:1}
+.rec-transform-name{font-family:"Noto Sans JP",sans-serif;font-size:18px;color:var(--rec-forest);line-height:1.6;overflow-wrap:anywhere}
+.rec-transform-flow h3{margin:0 0 17px;font-size:20px}
+.rec-transform-flow li>p:last-child{font-size:16px;line-height:1.95}
+/* 08 — a typographic index, not eight tiny cards. */
+.rec-services{background:var(--rec-sage)}
+.rec-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 66px;margin-top:45px}
+.rec-service-item{padding:29px 0 36px;border-top:1px solid #A5B6A2}
+.rec-service-number{margin-bottom:13px!important;color:var(--rec-gold-text);font-size:12px;font-weight:700;letter-spacing:.14em}
+.rec-service-item h3{margin:0 0 20px;font-size:25px;line-height:1.75}
+.rec-service-item>p{font-size:16px;line-height:1.95}
+.rec-direct-flow{display:grid;grid-template-columns:1fr;gap:24px;margin:29px 0 0;padding:0;list-style:none}
+.rec-direct-flow li{position:relative;min-width:0;padding:12px 20px;border:1px solid #A5B6A2;background:var(--rec-ivory);color:var(--rec-forest);font-size:16px;font-weight:600;text-align:center;line-height:1.7}
+.rec-direct-flow li:not(:last-child)::after{content:"↓";position:absolute;bottom:-24px;left:calc(50% - 8px);height:23px;width:16px;color:var(--rec-gold-text);font-size:18px;line-height:23px}
+/* 09 — clear subchapters for support, evidence, practical answers and reading. */
+.rec-approach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px}
+.rec-approach-grid article{padding:30px 0;border-top:2px solid var(--rec-gold);border-bottom:1px solid var(--rec-line)}
+.rec-approach-label{color:var(--rec-gold-text);font-size:13px;font-weight:700;letter-spacing:.15em}
+.rec-approach-grid h3{margin:0 0 22px;font-size:26px}
+.rec-subsection{margin-top:92px}
+.rec-subsection>h2{margin-bottom:34px}
+.rec-case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.rec-case{border:1px solid var(--rec-line)}
+.rec-case h3{margin:0;padding:20px 22px;border-top:3px solid var(--rec-gold);font-family:"Noto Sans JP",sans-serif;font-size:17px;line-height:1.8}
+.rec-case-before,.rec-case-after,.rec-case-retained{padding:23px 22px}
+.rec-case-before{background:#F0F2EF;color:#535D53}
+.rec-case-before .rec-diagram-label{color:#535D53}
+.rec-case-before p:last-child{font-size:16px;line-height:1.9}
+.rec-case-after{background:#E8EEE4;color:var(--rec-forest)}
+.rec-case-result{font-family:"Noto Serif JP",serif;font-size:28px;font-weight:600;line-height:1.7}
+.rec-case-retained{border-top:1px solid var(--rec-line)}
+.rec-case-retained p{margin-bottom:6px;font-size:16px;line-height:1.9}
+.rec-case-retained strong{font-size:22px;color:var(--rec-forest)}
+.rec-process-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin:42px 0 0;padding:0;list-style:none}
+.rec-process-flow li{position:relative;min-width:0;padding-top:23px;border-top:1px solid var(--rec-gold)}
+.rec-process-flow li:not(:last-child)::after{content:"→";position:absolute;top:37px;right:-22px;width:20px;font-size:19px;line-height:1;color:var(--rec-gold-text)}
+.rec-process-number{display:block;margin-bottom:21px;font-family:"Noto Serif JP",serif;font-size:28px;line-height:1.4;color:var(--rec-gold-text)}
+.rec-process-flow h3{margin:0 0 15px;font-size:21px;line-height:1.8}
+.rec-process-flow p{font-size:16px;line-height:1.9}
+.rec-faq{border-top:1px solid var(--rec-line)}
+.rec-faq article{border-bottom:1px solid var(--rec-line)}
+.rec-faq-question{display:grid;grid-template-columns:30px minmax(0,1fr) 24px;gap:16px;align-items:start;width:100%;min-height:64px;padding:24px 0;border:0;background:transparent;color:var(--rec-forest);font:600 20px/1.8 "Noto Serif JP",serif;text-align:left;cursor:pointer}
+.rec-faq-q{color:var(--rec-gold-text);font-size:20px}
+.rec-faq-question .faq-question-text{min-width:0;white-space:normal;overflow-wrap:break-word;text-wrap:pretty}
+.rec-faq-indicator::after{content:"＋";font:400 24px/1.5 "Noto Sans JP",sans-serif;color:var(--rec-gold-text)}
+.rec-faq-question[aria-expanded="true"] .rec-faq-indicator::after{content:"−"}
+.rec-faq-answer{padding:0 40px 28px 46px;font-size:16px;line-height:1.95}
+.rec-faq-answer[hidden]{display:none}
+.rec-article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:29px;margin-top:31px}
+.rec-article-grid article{min-width:0}
+.rec-article-grid a{display:block;height:100%;padding-bottom:19px;border-bottom:1px solid var(--rec-line);text-decoration:none}
+.rec-article-grid a:hover h3{text-decoration:underline;text-underline-offset:5px}
+.rec-article-grid img{display:block;width:100%;height:auto;background:var(--rec-ivory)}
+.rec-article-label{margin:20px 0 11px!important;font-size:12px;color:var(--rec-gold-text);letter-spacing:.12em;font-weight:600}
+.rec-article-grid h3{margin:0 0 22px;font-size:22px;line-height:1.75}
+.rec-article-link{display:inline-block;padding-block:8px;color:var(--rec-forest);font-size:14px;font-weight:600}
+/* 10 — a warm close and a clear, verified 60-minute consultation destination. */
+.rec-final{background:var(--rec-ivory);border-top:1px solid var(--rec-line)}
+.rec-final-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:72px;align-items:start}
+.rec-final-copy{font-size:16px;line-height:2}
+.rec-final-copy p:first-child{font-family:"Noto Serif JP",serif;color:var(--rec-forest);font-size:22px;line-height:1.9}
+.rec-consultation-panel{padding:37px 30px;background:var(--rec-sage);border-top:3px solid var(--rec-gold)}
+.rec-consultation-panel>p:first-child{font-size:16px;color:var(--rec-forest);font-weight:600}
+.rec-consultation-name{font-size:43px;font-family:"Noto Serif JP",serif;color:var(--rec-forest);font-weight:600;line-height:1.5}
+.rec-consultation-panel .rec-button{display:flex;width:100%;margin-top:27px}
+.rec-consultation-panel .rec-button-outline{margin-top:16px;font-size:15px}
+/* Layout changes are semantic reflows, never smaller body type or masked overflow. */
+@media(max-width:1000px){
+ .rec-hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:29px}
+ .rec-hero-copy{max-width:820px}
+ .rec-hero h1{font-size:50px}
+ .rec-brand-panel{max-width:820px;width:100%;padding:36px}
+ .rec-brand-name{font-size:72px}
+ .rec-brand-letters{grid-template-columns:repeat(6,minmax(0,1fr))}
+ .rec-brand-letters li:not(:nth-child(3n))::after{display:none}
+ .rec-brand-letters li:not(:last-child)::after{display:block;right:-15px}
+ .rec-phase-flow{grid-template-columns:minmax(0,1fr);gap:36px}
+ .rec-phase:not(:last-child)::after{content:"↓";top:auto;right:auto;bottom:-30px;left:calc(50% - 12px);height:24px}
+ .rec-phase-english{font-size:26px}
+ .rec-phase-persona .rec-phase-english{font-size:35px}
+ .rec-philosophy-grid{grid-template-columns:minmax(0,1fr);gap:35px}
+ .rec-perspective p{font-size:20px}
+ .rec-final-grid{gap:38px}
+}
+@media(max-width:900px){
+ .rec-method-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rec-transform-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+ .rec-transform-flow li:nth-child(2)::after{display:none}
+ .rec-hero h1{font-size:46px}
+ .rec-mind-flow{gap:28px 20px}
+ .rec-mind-step{padding:20px 16px}
+ .rec-mind-focus{padding:18px 14px}
+ .rec-step-head{flex-wrap:wrap;gap:5px 10px}
+ .rec-step-head h3{font-size:19px}
+ .rec-mind-step:not(:nth-child(4n))::after{right:-19px;width:18px;font-size:18px}
+ .rec-job-mock{padding:28px 24px}
+ .rec-job-mock h3{font-size:25px}
+ .rec-approach-grid{gap:30px}
+ .rec-case-grid{gap:17px}
+ .rec-case h3{padding:17px 16px;font-size:16px}
+ .rec-case-before,.rec-case-after,.rec-case-retained{padding:20px 16px}
+ .rec-case-result{font-size:25px}
+ .rec-process-flow{gap:18px}
+ .rec-process-flow h3{font-size:19px}
+ .rec-process-flow li:not(:last-child)::after{right:-18px;font-size:16px;width:16px}
+ .rec-consultation-name{font-size:35px}
+ .rec-article-grid h3{font-size:20px}
+}
+@media(max-width:700px){
+ .rec-section{padding-block:68px}
+ .rec-section h2{font-size:28px;line-height:1.7}
+ .rec-section-heading{margin-bottom:29px}
+ .rec-checklist,.rec-info-compare,.rec-mind-flow,.rec-understanding-compare,.rec-job-comparison,.rec-transform-flow,.rec-service-grid,.rec-approach-grid,.rec-case-grid,.rec-process-flow,.rec-article-grid,.rec-final-grid{grid-template-columns:minmax(0,1fr)}
+ .rec-checklist{margin-top:30px}
+ .rec-checklist li{padding-block:20px}
+ .rec-checklist li::before{top:20px}
+ .rec-checklist li:nth-last-child(2){border-bottom:0}
+ .rec-after-list{margin-top:28px}
+ .rec-info-compare{padding:24px;gap:25px}
+ .rec-info-compare>div+div{padding-top:24px;padding-left:0;border-left:0;border-top:1px solid #B6C5B5}
+ .rec-pullquote,.rec-conclusion{font-size:23px}
+ .rec-philosophy h2{font-size:34px}
+ .rec-philosophy-grid{margin-top:34px;gap:26px}
+ .rec-perspective p{grid-template-columns:minmax(0,1fr);gap:9px;padding-block:23px;font-size:19px}
+ .rec-turn-arrow{text-align:left;line-height:1.2}
+ .rec-philosophy-close{margin-top:32px;padding-top:27px}
+ .rec-mind-flow{gap:26px;margin-top:32px}
+ .rec-mind-step{padding:22px 24px}
+ .rec-mind-focus{padding:20px 22px}
+ .rec-step-head{flex-wrap:nowrap;gap:16px}
+ .rec-step-head h3{font-size:23px}
+ .rec-mind-step:not(:last-child)::after,.rec-mind-step:nth-child(4)::after{content:"↓";position:absolute;color:var(--rec-gold-text);top:auto;right:auto;bottom:-24px;left:calc(50% - 8px);width:16px;height:22px;line-height:22px;font-size:18px}
+ .rec-mind-step:last-child::after{display:none}
+ .rec-assimilation-title{margin-top:42px;font-size:24px!important}
+ .rec-understanding-compare{gap:18px;margin-block:27px}
+ .rec-understanding-compare>div{padding:24px}
+ .rec-job-comparison{gap:22px;margin:29px 0 32px}
+ .rec-job-mock{padding:27px 24px}
+ .rec-job-mock h3{font-size:25px}
+ .rec-transform-flow{gap:29px;margin-block:34px}
+ .rec-transform-flow li:not(:last-child)::after,.rec-transform-flow li:nth-child(2)::after{display:block;content:"↓";top:auto;right:auto;bottom:-26px;left:calc(50% - 8px);height:24px;width:16px;font-size:18px;line-height:24px}
+ .rec-transform-flow li:last-child::after{display:none}
+ .rec-service-grid{margin-top:34px}
+ .rec-service-item{padding-block:27px 31px}
+ .rec-service-item h3{font-size:23px}
+ .rec-approach-grid{gap:29px}
+ .rec-approach-grid h3{font-size:24px}
+ .rec-subsection{margin-top:62px}
+ .rec-case-grid{gap:24px}
+ .rec-case h3{padding:20px 22px;font-size:18px}
+ .rec-case-before,.rec-case-after,.rec-case-retained{padding:23px 22px}
+ .rec-case-result{font-size:28px}
+ .rec-process-flow{gap:28px;margin-top:30px}
+ .rec-process-flow li{display:grid;grid-template-columns:45px minmax(0,1fr);column-gap:18px;padding-top:21px}
+ .rec-process-number{grid-row:span 2;font-size:28px}
+ .rec-process-flow h3{margin:0 0 10px;font-size:22px}
+ .rec-process-flow p{grid-column:2}
+ .rec-process-flow li::after{display:none}
+ .rec-faq-question{gap:10px;grid-template-columns:27px minmax(0,1fr) 23px;font-size:18px;line-height:1.85;padding-block:21px}
+ .rec-faq-answer{padding:0 0 25px 37px;font-size:16px}
+ .rec-article-grid{gap:34px}
+ .rec-article-grid h3{font-size:23px}
+ .rec-final-grid{gap:29px}
+ .rec-consultation-panel{padding:29px 26px}
+ .rec-consultation-name{font-size:39px}
+}
+@media(max-width:640px){
+ .rec-shell,.rec-section>.rec-reading{width:calc(100% - 40px)}
+ .rec-hero{padding-top:0;padding-bottom:55px}
+ .rec-breadcrumb{padding:19px 0;font-size:12px}
+ .rec-breadcrumb ol{gap:6px 11px}
+ .rec-breadcrumb li:not(:last-child)::after{margin-left:11px}
+ .rec-hero-grid{padding-top:24px;gap:33px}
+ .rec-hero h1{font-size:32px;line-height:1.7}
+ .rec-eyebrow{font-size:11px;letter-spacing:.13em;margin-bottom:15px}
+ .rec-shoulder{font-size:15px;line-height:1.85;margin-bottom:18px!important}
+ .rec-hero-sub{margin-block:23px 26px}
+ .rec-hero-sub p:first-child{font-size:19px}
+ .rec-button{width:100%;padding:14px 19px;gap:14px;min-height:56px}
+ .rec-brand-panel{padding:28px 24px}
+ .rec-brand-name{font-size:56px}
+ .rec-brand-label{font-size:14px}
+ .rec-brand-promise{font-size:21px}
+ .rec-brand-letters{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 13px;margin-top:8px}
+ .rec-brand-letters li:not(:last-child)::after{right:-12px;width:10px}
+ .rec-brand-letters li:nth-child(3)::after{display:none}
+ .rec-brand-letters b{font-size:13px}
+ .rec-brand-letters span{width:43px;height:43px;font-size:23px}
+ .rec-philosophy h2{font-size:30px}
+ .rec-philosophy-close p:last-child{font-size:23px}
+ .rec-method-name{font-size:62px;margin-bottom:30px!important}
+ .rec-method-name>span{margin-left:9px}
+ .rec-method-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+ .rec-method-card{padding:27px 24px}
+ .rec-method-title{gap:20px}
+ .rec-method-title h3{font-size:21px}
+ .rec-method-title h3 span{font-size:17px}
+ .rec-method-question{font-size:23px}
+ .rec-phase-flow{margin:35px 0 38px;gap:32px}
+ .rec-phase{padding:25px 24px}
+ .rec-phase:not(:last-child)::after{bottom:-28px}
+ .rec-phase-english{font-size:23px}
+ .rec-phase-persona .rec-phase-english{font-size:33px}
+ .rec-method-closing{margin-top:40px;padding-top:29px}
+ .rec-method-closing h3{font-size:28px;line-height:1.9}
+ .rec-concept-note,.rec-message-note{padding-left:18px}
+ .rec-concept-note>p:nth-child(2),.rec-message-note>p:nth-child(2){font-size:22px}
+ .rec-consultation-panel{padding:27px 22px}
+ .rec-consultation-name{font-size:36px}
+ .rec-final-copy p:first-child{font-size:21px}
+}
+@media(max-width:360px){
+ .rec-hero h1{font-size:29px}
+ .rec-section h2{font-size:26px}
+ .rec-brand-panel{padding:25px 20px}
+ .rec-brand-name{font-size:49px}
+ .rec-brand-promise{font-size:20px}
+ .rec-brand-letters{gap:18px 11px}
+ .rec-brand-letters b{font-size:12px}
+ .rec-method-name{font-size:55px}
+ .rec-method-closing h3{font-size:26px}
+ .rec-job-mock{padding:24px 21px}
+ .rec-job-mock h3{font-size:24px}
+ .rec-faq-question{font-size:17px;gap:8px;grid-template-columns:25px minmax(0,1fr) 23px}
+ .rec-consultation-name{font-size:33px}
+}
+@media(prefers-reduced-motion:reduce){.rec-button{transition:none}}
